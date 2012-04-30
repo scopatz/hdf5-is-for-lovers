@@ -5,7 +5,7 @@ Total Recall: flmake and the Quest for Reproducibility
 :Author: Anthony Scopatz <scopatz@gmail.com>
 :Affiliation: The University of Chicago
 
-FLASH is a high-performance computing (HPC) multi-physics code which is used to perform 
+`FLASH`_ is a high-performance computing (HPC) multi-physics code which is used to perform 
 astrophysical and high-energy density physics simulations.  It runs on the full range of 
 systems from laptops to workstations to 100,000 processor super computers - such as the 
 Blue Gene/P at Argonne National Laboratory.
@@ -54,14 +54,13 @@ FLASH simulations.
 The methods described above may be used whenever 
 source code itself is distributed.   While this is true for FLASH (uncommon amongst compiled
 codes), most Python packages also distribute their source.  Therefore the same 
-reproducibility strategy is highly recommended for Python simulation codes.  Thus flmake 
-shows that reproducibility - which is notably abset from most computational science 
+reproducibility strategy is applicable and highly recommended for Python simulation codes.  
+Thus flmake shows that reproducibility - which is notably absent from most computational science 
 projects - is easily attainable using only version control and standard library modules.
 
-.. _flmake: http://flash.uchicago.edu/site/flashcode/user_support/tools4b/usersguide/flmake/index.html
+.. _FLASH: http://flash.uchicago.edu/site/
 
-Here, include a talk summary of no longer than 500 words. Aspects such as relevance to 
-Python in science, applicability, and novelty will be considered by the program committee.
+.. _flmake: http://flash.uchicago.edu/site/flashcode/user_support/tools4b/usersguide/flmake/index.html
 
 ...............................................................
 
