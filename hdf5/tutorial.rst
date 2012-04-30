@@ -33,15 +33,55 @@ This tutorial will discuss tools, strategies, and hacks for really squeezing eve
 of performance out of HDF5 in new or existing projects.  It will also go over fundemental 
 limitations in the specification and provide creative and subtle strategies for getting around 
 them.  Overall, this tutorial will show how HDF5 plays nicely with all parts of an application 
-making the code and data both faster and smaller.
+making the code and data both faster and smaller.  With such powerful features at the 
+developer's disposal, what is not to love?!
 
 This tutorial is targeted at a more advanced audience which has a prior knowledge
 of Python and NumPy.  Knowledge of C or C++ and basic HDF5 is recomended but not required.
 
+--------------
+Outline
+--------------
+* Meaning in layout (20 min)
+
+    - Tips for choosing your heirarchy
+
+* Advanced datatypes (20 min)
+
+    - Tables
+    - Nested types
+    - Tricks with malloc() and byte-counting
+
+* **Exercise on above topics** (20 min)
+
+* Chunking (20 min)
+
+    - How it works
+    - How to properly select your chunksize
+
+* Queries and Selections (20 min)
+
+    - In-core vs Out-of-core calculations
+    - PyTables.where()
+    - Datasets vs Dataspaces
+
+* **Exercise on above topics** (20 min)
+
+* The Starving CPU Problem (1 hr)
+
+    - Why you should always use compression
+    - Compression algorithms available
+    - Choosing the correct one
+    - Exercise
+
+* Integration with other databases (1 hr)
+
+    - Migrating to/from SQL
+    - HDF5 in other databases (JSON example)
+    - Other Databases in HDF5 (JSON example)
+    - Exercise
 
 
-A more detailed outline of the tutorial content, including the duration of each part, 
-and exercise sessions for the review process.
 A list of Python packages that attendees will need to have installed prior to the class to follow along. Please mention if any packages are not cross platform. Installation instructions or links to installation documentation should be provided for packages that are not available through easy_install, pip, EPD, etc., or that require third party libraries.
 
 If available, the tutorial notes, slides, exercise files, ipython notebooks, that you already have, even if they are preliminary.
