@@ -1,17 +1,17 @@
-The SciPy Conference always kicks off with two days of tutorials. These sessions provide extremely affordable access to expert training, and consistently receive fantastic feedback from participants.
+===================
+HDF5 is for Lovers
+===================
 
-We are now accepting tutorial proposals from individuals or teams that would like to present a tutorial at SciPy 2012.
+----
+Bio
+----
+Anthony Scopatz is a computational nuclear engineer / physicist post-doctoral scholar at 
+the FLASH Center at the University of Chicago.  His initial workshop teaching experiance 
+came from instructing bootcamps for The Hacker Within - a peer-led teaching organization 
+at the Univerity of Wisconsin.  Out of this grew a collaboration teaching Software Carpentry 
+bootcamps in partnership with Greg Wilson.  During his tenure at Enthought, Inc, Anthony 
+taught week long courses (approx. 1 per month) on scientific computing in Python.
 
-Whether you are a major contributor to a scientific Python library or an expert-level user, this is a great opportunity to share your knowledge and defray the costs of your SciPy 2012 registration.
-
-Topics
-Tutorials should be focused on covering a well-defined topic in a hands-on manner. We want to see attendees coding! Each tutoria techniques or packages, helping new or advanced python programmers develop better or faster scientific applicatking for awesome techniques or packages, helping new or advanced python programmers develop better or faster scientific applicatking for awesome techniques or packages, helping new or advanced python programmers develop better or faster scientific applications.
-
-Stipend
-In recognition of the effort required to plan and prepare a high quality tutorial, we give a $1,000 stipend to each instructor (or team of instructors) for each half-day session they lead.
-
-Proposal submission
-Jonathan Rocher, scientific software developer at Enthought, is the 2012 Tutorial Chair, and Dharhas Pothina, scientist at the Texas Water Development Board, is the vice-chair. To submit your tutorial proposal, please send the following materials to 2012Tutorials@scipy.org:
 
 A short bio of the presenter or team members, containing a description of past experiences as a trainer/teacher/speaker, and (ideally) links to videos of these experiences if available.
 An instruction indicating whether the tutorial should be in the Introductory or Advanced Track.
