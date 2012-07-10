@@ -1,0 +1,73 @@
+{"pageSetup": {
+    "width": "10in",
+    "height": "7.5in",
+    "margin-top": "2mm",
+    "margin-bottom": "0mm",
+    "margin-left": ".5cm",
+    "margin-right": "1cm",
+    "margin-gutter": "0cm",
+    "spacing-header": "2mm",
+    "spacing-footer": "0mm",
+    "firstTemplate": "cutePage"
+  },
+  "fontsAlias" : {"stdFont": "Times-Roman",
+                  "stdBold": "Times-Bold",
+                  "stdItalic": "Times-Italic",
+                  #"stdBoldItalic": "Times-Bold-Italic",
+                  "stdMono": "Courier"},
+  "styles": [["normal" , {
+                "fontName": "Times-Roman",
+                "textColor": "#77181E",
+                "spaceAfter": 20,
+                "fontSize": 28}],
+             ["main-title" , {
+                "fontSize": 32,
+                "textColor": "black",
+                "spaceBefore": 150,
+                "spaceAfter": 25,
+                "alignment":"center"
+                }],
+             ["main-names" , {
+                "fontSize": 24,
+                "textColor": "#808080",
+                "alignment":"center"
+                }],
+             ["gray-and-small", {"alignment":"left",
+                "textColor": "#808080",
+                "spaceAfter": 20,
+                "fontSize": 16
+                }],
+             ["warning", {"alignment":"center",
+                "fontName": "stdBold",
+                "textColor": "#FF0000",
+                "spaceAfter": 20,
+                "fontSize": 28
+                }],
+             ["align-left", {"alignment":"left",
+                "textColor": "#77181E",
+                "spaceAfter": 20,
+                "fontSize": 28
+                }],
+             ["align-center", {"alignment":"center",
+                "textColor": "#77181E",
+                "spaceAfter": 20,
+                "fontSize": 28
+                }],
+             ["heading" , {
+                "alignment":"center",
+                "textColor": "#452F43",
+                "spaceAfter": 35,
+                "fontSize": 22}]
+            ],
+  "pageTemplates" : {
+    "cutePage": {
+        "frames": [
+            ["0", "0", "100%", "100%"]
+        ],
+        #"background" : "background.svg",
+        "background" : "background.png",
+        "showHeader" : false,
+        "showFooter" : true
+    }
+  }
+}
