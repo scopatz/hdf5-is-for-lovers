@@ -1,7 +1,3 @@
-.. raw:: pdf
-
-    SetPageCounter 42 lowerroman
-
 SciPy 2012 - Tutorials
 ==============================
 
@@ -42,7 +38,40 @@ terrestrial and astrophysical plasmas.  Features include:
     Nuclear Burning 
 
 
+What is FLASH?
+==============================
+FLASH code is a modular, parallel multiphysics simulation code for modeling
+terrestrial and astrophysical plasmas.  Features include:
 
+
+    Grid: Uniform Grid, AMR
+
+    Equation of State: Ideal gas, Multimaterial 
+
+    Laser ray trace package
+
+    Nuclear Burning 
+
+
+What is FLASH?
+==============================
+FLASH code is a modular, parallel multiphysics simulation code for modeling
+terrestrial and astrophysical plasmas.  Features include:
+
+
+    Grid: Uniform Grid, AMR
+
+    Equation of State: Ideal gas, Multimaterial 
+
+    Laser ray trace package
+
+    Nuclear Burning 
+
+
+Questions
+===============================
+.. image:: qm.jpg
+    :scale: 55%
 
 Questions
 ===============================

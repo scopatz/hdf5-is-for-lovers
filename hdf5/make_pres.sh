@@ -8,8 +8,10 @@ fi
 
 # make slides with swapped matplotlibrc
 cp matplotlibrc ${HOME}/.matplotlib/matplotlibrc
-rst2pdf ${PRESNAME}.rst -b1 -s slides.style -o ${PRESNAME}.pdf --fit-background-mode=center
-rm ${HOME}/.matplotlib/matplotlibrc
+python pagenum_filter.py ${PRESNAME}.rst ${PRESNAME}.tmp.rst
+rst2pdf ${PRESNAME}.tmp.rst -b1 -s slides.style -o ${PRESNAME}.pdf --fit-background-mode=center
+rm ${PRESNAME}.tmp.rst
+rm ${HOME}/.matplotlib/matplotlibrc 
 
 # replace matplotlibrc
 if [ -f ${HOME}/.matplotlib/matplotlibrc.presbak ]; then
