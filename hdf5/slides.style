@@ -23,7 +23,7 @@
              ["main-title" , {
                 "fontSize": 32,
                 "textColor": "black",
-                "spaceBefore": 150,
+                "spaceBefore": 115,
                 "spaceAfter": 25,
                 "alignment":"center"
                 }],
