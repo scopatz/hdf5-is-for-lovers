@@ -1,14 +1,17 @@
+.. raw:: pdf
+
+    SetPageCounter 42 lowerroman
+
 SciPy 2012 - Tutorials
 ==============================
 
 .. container:: main-title
 
-    HDF5 is for Lovers
+    HDF5 is for Lovers |nerd_candy_heart|
 
 .. container:: main-names
 
-
-    June 25th, 2012, ANS, Chicago, IL
+    July 16th, 2012, SciPy, Austin, TX
 
     Anthony Scopatz 
 
@@ -16,8 +19,11 @@ SciPy 2012 - Tutorials
 
     The University of Chicago
 
-    scopatz@flash.uchicago.edu
+    scopatz@gmail.com
 
+
+.. |nerd_candy_heart| image:: nerd_candy_heart.png 
+                        :scale: 100%
 
 
 
@@ -41,4 +47,13 @@ terrestrial and astrophysical plasmas.  Features include:
 Questions
 ===============================
 .. image:: qm.jpg
-    :scale: 100%
+    :scale: 55%
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. container:: gray-and-small
+
+    Image source: http://www.fotopedia.com/items/flickr-2200500024
+

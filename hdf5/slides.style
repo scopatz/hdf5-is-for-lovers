@@ -21,7 +21,7 @@
                 "spaceAfter": 20,
                 "fontSize": 28}],
              ["main-title" , {
-                "fontSize": 32,
+                "fontSize": 44,
                 "textColor": "black",
                 "spaceBefore": 115,
                 "spaceAfter": 25,
@@ -64,10 +64,11 @@
         "frames": [
             ["0", "0", "100%", "100%"]
         ],
-        #"background" : "background.svg",
         "background" : "background.png",
         "showHeader" : false,
-        "showFooter" : true
+        # Toggle page numbers
+        showFooter" : true
+        #"showFooter" : false
     }
   }
 }
