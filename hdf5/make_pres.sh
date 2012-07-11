@@ -13,6 +13,10 @@ rst2pdf ${PRESNAME}.tmp.rst -b1 -s slides.style -o ${PRESNAME}.pdf --fit-backgro
 rm ${PRESNAME}.tmp.rst
 rm ${HOME}/.matplotlib/matplotlibrc 
 
+# replace blue links with another color
+sed -i 's/0 0 .501961 [Rr][Gg]/.466667 .094118 .117647 rg/' ${PRESNAME}.pdf
+
+
 # replace matplotlibrc
 if [ -f ${HOME}/.matplotlib/matplotlibrc.presbak ]; then
     mv ${HOME}/.matplotlib/matplotlibrc.presbak ${HOME}/.matplotlib/matplotlibrc

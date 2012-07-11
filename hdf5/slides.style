@@ -17,7 +17,8 @@
                   "stdMono": "Courier"},
   "styles": [["normal" , {
                 "fontName": "Times-Roman",
-                "textColor": "#77181E",
+                #"textColor": "#77181E",
+                "textColor": "black",
                 "spaceAfter": 20,
                 "fontSize": 28}],
              ["main-title" , {
