@@ -23,19 +23,58 @@ SciPy 2012 - Tutorials
 
 
 
-What is FLASH?
+What is HDF5?
 ==============================
-FLASH code is a modular, parallel multiphysics simulation code for modeling
-terrestrial and astrophysical plasmas.  Features include:
+HDF5 stands for (**H**)eirarchical (**D**)ata (**F**)ormat (**5**)ive.
 
+What is HDF5?
+==============================
+HDF5 stands for (**H**)eirarchical (**D**)ata (**F**)ormat (**5**)ive.
 
-    Grid: Uniform Grid, AMR
+It is supported by the lovely people at |hdf_group|
 
-    Equation of State: Ideal gas, Multimaterial 
+What is HDF5?
+==============================
+HDF5 stands for (**H**)eirarchical (**D**)ata (**F**)ormat (**5**)ive.
 
-    Laser ray trace package
+It is supported by the lovely people at |hdf_group|
 
-    Nuclear Burning 
+At its core HDF5 is binary file type specification.
+
+What is HDF5?
+==============================
+HDF5 stands for (**H**)eirarchical (**D**)ata (**F**)ormat (**5**)ive.
+
+It is supported by the lovely people at |hdf_group|
+
+At its core HDF5 is binary file type specification.
+
+However, what make HDF5 great is the numerous libraries written to interact 
+with files of this type and their *extremely rich* feature set.
+
+What is HDF5?
+==============================
+HDF5 stands for (**H**)eirarchical (**D**)ata (**F**)ormat (**5**)ive.
+
+It is supported by the lovely people at |hdf_group|
+
+At its core HDF5 is binary file type specification.
+
+However, what make HDF5 great is the numerous libraries written to interact 
+with files of this type and their *extremely rich* feature set.
+
+.. raw:: pdf
+
+    Spacer 0 40
+
+.. container:: align-center
+
+    **Which you will learn today!**
+
+.. |hdf_group| image:: hdf_logo.jpg
+                :scale: 70%
+                :align: middle
+                :target: http://www.hdfgroup.org/
 
 
 What is FLASH?
@@ -85,4 +124,7 @@ Questions
 .. container:: gray-and-small
 
     Image source: http://www.fotopedia.com/items/flickr-2200500024
+
+
+
 

@@ -45,12 +45,12 @@
                 "fontSize": 28
                 }],
              ["align-left", {"alignment":"left",
-                "textColor": "#77181E",
+                "textColor": "black",
                 "spaceAfter": 20,
                 "fontSize": 28
                 }],
              ["align-center", {"alignment":"center",
-                "textColor": "#77181E",
+                "textColor": "black",
                 "spaceAfter": 20,
                 "fontSize": 28
                 }],
