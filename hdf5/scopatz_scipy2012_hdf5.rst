@@ -18,7 +18,7 @@ SciPy 2012 - Tutorials
     scopatz@gmail.com
 
 
-.. |nerd_candy_heart| image:: nerd_candy_heart.png 
+.. |nerd_candy_heart| image:: img/nerd_candy_heart.png 
                         :scale: 100%
 
 
@@ -50,7 +50,7 @@ with files of this type and their *extremely rich* feature set.
 
     **Which you will learn today!**
 
-.. |hdf_group| image:: hdf_logo.jpg
+.. |hdf_group| image:: img/hdf_logo.jpg
                 :scale: 70%
                 :align: middle
                 :target: http://www.hdfgroup.org/
@@ -85,21 +85,30 @@ And this was slated to be *after* the IPython tutorial.  So...
 
     **Get the Program Committee!**
 
-.. image:: angry-mob.jpg
+.. image:: img/angry-mob.jpg
     :align: center
-    :scale: 225%
+    :scale: 250%
 
 .. container:: gray-and-small
 
     ~please don't!
 
-Contents
-=======================
-de nada
+Warm up exercise
+===============================
+.. code-block:: python
+
+    import numpy as np
+    import tables as tb
+
+    f = tb.openFile('temp.h5', 'a')
+    heart = np.ones(42, dtype=[('rate', int), ('beat', float)])
+    f.createTable('/', 'heart', heart)
+    f.close()
+
 
 Questions
 ===============================
-.. image:: qm.jpg
+.. image:: img/qm.jpg
     :scale: 55%
 
 .. raw:: pdf

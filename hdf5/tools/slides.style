@@ -35,7 +35,7 @@
                 }],
              ["gray-and-small", {"alignment":"left",
                 "textColor": "#808080",
-                "spaceAfter": 20,
+                #"spaceAfter": 20,
                 "fontSize": 16
                 }],
              ["warning", {"alignment":"center",
@@ -69,7 +69,7 @@
         "frames": [
             ["0", "0", "100%", "100%"]
         ],
-        "background" : "background.png",
+        "background" : "img/background.png",
         "showHeader" : false,
         # Toggle page numbers
         showFooter" : true
