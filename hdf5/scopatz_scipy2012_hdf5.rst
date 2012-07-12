@@ -95,6 +95,12 @@ And this was slated to be *after* the IPython tutorial.  So...
 
 Warm up exercise
 ===============================
+In IPython:
+
+.. raw:: pdf
+
+    Spacer 0 20
+
 .. code-block:: python
 
     import numpy as np
@@ -104,6 +110,20 @@ Warm up exercise
     heart = np.ones(42, dtype=[('rate', int), ('beat', float)])
     f.createTable('/', 'heart', heart)
     f.close()
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+Or run ``python exer/warmup.py``
+
+Warm up exercise
+===============================
+You should see in ViTables:
+
+.. image:: img/warmup.png
+    :align: center
+    :scale: 35%
 
 
 Questions
