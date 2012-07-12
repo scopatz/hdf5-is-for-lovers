@@ -58,7 +58,11 @@
                 "alignment":"center",
                 "textColor": "#452F43",
                 "spaceAfter": 35,
-                "fontSize": 22}]
+                "fontSize": 22}],
+             ["bullet-list-item" , {
+                "parent": "bodytext",
+                "spaceBefore": 40
+                }]
             ],
   "pageTemplates" : {
     "cutePage": {

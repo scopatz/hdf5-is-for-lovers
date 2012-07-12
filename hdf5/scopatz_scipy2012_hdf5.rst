@@ -56,6 +56,47 @@ with files of this type and their *extremely rich* feature set.
                 :target: http://www.hdfgroup.org/
 
 
+A Note on the Format
+=================================
+Intermixed, there will be:
+
+* Slides
+* Interactive Hacking
+* Exercises
+
+.. break
+
+Feel free to:
+
+* Ask questions at anytime 
+* Explore at your own pace.
+
+A Note on the Format
+=================================
+This tutorial was submitted to the *Advanced* track.
+
+.. break
+
+And this was slated to be *after* the IPython tutorial.  So...
+
+.. break
+
+.. container:: align-center
+
+    **Get the Program Committee!**
+
+.. image:: angry-mob.jpg
+    :align: center
+    :scale: 225%
+
+.. container:: gray-and-small
+
+    ~please don't!
+
+Contents
+=======================
+de nada
+
 Questions
 ===============================
 .. image:: qm.jpg
