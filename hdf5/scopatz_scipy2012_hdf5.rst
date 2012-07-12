@@ -93,9 +93,35 @@ And this was slated to be *after* the IPython tutorial.  So...
 
     ~please don't!
 
+Class Makeup
+==============================
+By a show of hands, how many people have used:
+
+* HDF5 before?
+
+.. break
+
+* PyTables?
+
+.. break
+
+* h5py?
+
+.. break
+
+* the HDF5 C API?
+
+.. break
+
+* SQL?
+
+.. break
+
+* Other binary data formats? 
+
 Warm up exercise
 ===============================
-In IPython:
+In IPython
 
 .. raw:: pdf
 
@@ -110,6 +136,7 @@ In IPython:
     heart = np.ones(42, dtype=[('rate', int), ('beat', float)])
     f.createTable('/', 'heart', heart)
     f.close()
+
 
 .. raw:: pdf
 
@@ -126,6 +153,44 @@ You should see in ViTables:
     :scale: 35%
 
 
+A Brief Introduction
+===========================
+For persisting structured numerical data, binary formats are superior
+to plaintext.
+
+.. break
+
+For one thing, they are often smaller:
+
+.. code-block:: python
+
+    # small ints       # med ints 
+    42   (4 bytes)     123456   (4 bytes)
+    '42' (2 bytes)     '123456' (6 bytes)
+
+    # near-int floats  # e-notation floats
+    12.34   (8 bytes)  42.424242E+42   (8 bytes)
+    '12.34' (5 bytes)  '42.424242E+42' (13 bytes)
+
+A Brief Introduction
+===========================
+For another, binary formats are often faster for I/O because ``atoi()`` and ``atof()``
+are expensive.
+
+.. break
+
+However, you often want some thing more than a binary chunk of data in a file.
+
+.. break
+
+.. note:: This is the mechnaism behind ``numpy.save()`` and ``numpy.savez()``.
+
+
+A Brief Introduction
+===========================
+Instead, you want a real *database* with the ability to store many datasets, user-defined
+metadata, optimized I/O, and the ability to query its contents.
+
 Questions
 ===============================
 .. image:: img/qm.jpg
@@ -138,7 +203,5 @@ Questions
 .. container:: gray-and-small
 
     Image source: http://www.fotopedia.com/items/flickr-2200500024
-
-
 
 
