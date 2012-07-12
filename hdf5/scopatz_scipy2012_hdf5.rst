@@ -27,41 +27,20 @@ What is HDF5?
 ==============================
 HDF5 stands for (**H**)eirarchical (**D**)ata (**F**)ormat (**5**)ive.
 
-What is HDF5?
-==============================
-HDF5 stands for (**H**)eirarchical (**D**)ata (**F**)ormat (**5**)ive.
+.. break
 
 It is supported by the lovely people at |hdf_group|
 
-What is HDF5?
-==============================
-HDF5 stands for (**H**)eirarchical (**D**)ata (**F**)ormat (**5**)ive.
-
-It is supported by the lovely people at |hdf_group|
+.. break
 
 At its core HDF5 is binary file type specification.
 
-What is HDF5?
-==============================
-HDF5 stands for (**H**)eirarchical (**D**)ata (**F**)ormat (**5**)ive.
-
-It is supported by the lovely people at |hdf_group|
-
-At its core HDF5 is binary file type specification.
+.. break
 
 However, what make HDF5 great is the numerous libraries written to interact 
 with files of this type and their *extremely rich* feature set.
 
-What is HDF5?
-==============================
-HDF5 stands for (**H**)eirarchical (**D**)ata (**F**)ormat (**5**)ive.
-
-It is supported by the lovely people at |hdf_group|
-
-At its core HDF5 is binary file type specification.
-
-However, what make HDF5 great is the numerous libraries written to interact 
-with files of this type and their *extremely rich* feature set.
+.. break
 
 .. raw:: pdf
 

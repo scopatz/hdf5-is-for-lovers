@@ -1,11 +1,12 @@
+import re
 from argparse import ArgumentParser
 
 
-def pagenum_filter(inpfile, outfile=None, sep="=", style='arabic'):
+def slidebreak_filter(inpfile, outfile=None, sep="="):
     sep = 3*sep
     with open(inpfile) as f:
         lines = f.readlines()
-    page_count_temp = ".. raw:: pdf\n\n    SetPageCounter {pagenum} {style}\n\n"
+    re_break = re.compile("..\s+break\s*\n")
 
     # filter out above title separtors
     sepinds = [i for i, line in enumerate(lines) if line.startswith(sep)]
@@ -14,39 +15,38 @@ def pagenum_filter(inpfile, outfile=None, sep="=", style='arabic'):
 
     # get the start of eash slide
     sepinds = [i for i, line in enumerate(lines) if line.startswith(sep)]
-    beginds = [i - 1 for i in sepinds]
+    beginds = [i - 1 for i in sepinds] + [999999999]
 
     # Add counter
-    pagenum = 1
-    i = beginds[0]
-    prevlines = lines[i:i+3]
-    lines[i+1] += page_count_temp.format(pagenum=pagenum, style=style)
-    for i in beginds[1:]:
-        if prevlines != lines[i:i+3]:
-            pagenum += 1
-            prevlines = lines[i:i+3]
-        lines[i+1] += page_count_temp.format(pagenum=pagenum, style=style)
+    newlines = lines[:beginds[0]]
+    for i, j in zip(beginds[:-1], beginds[1:]):
+        slide = lines[i:j]
+        newslide = []
+        for line in slide:
+            if re_break.match(line):
+                newlines.extend(newslide)
+                newslide = newslide[:-1]
+            else:
+                newslide.append(line)
+        newlines.extend(newslide)
 
     # print or write out
-    newfile = "".join(lines)
+    newfile = "".join(newlines)
     if outfile == '' or outfile is None:
-        print newfile          
+        print newfile
     else:
         with open(outfile, 'w') as f:
             f.write(newfile)
 
 
 def main():
-    parser = ArgumentParser(description='Add page numbers.')
+    parser = ArgumentParser(description='Duplicate sections at breaks.')
     parser.add_argument('inpfile', type=str, help='path to input file')
     parser.add_argument('-o', dest="outfile", type=str, help='path to output file')
     parser.add_argument('--sep', dest='sep', action='store', default="=",
                         help='the topmost rst separator (=-.*~`$&^!...)')
-    parser.add_argument('--style', dest='style', action='store', default="arabic",
-                        help=('Page counter style, values possible: '
-                             'arabic,roman,lowerroman,alpha,loweralpha.'))
     args = parser.parse_args()
-    pagenum_filter(args.inpfile, args.outfile, sep=args.sep, style=args.style)
+    slidebreak_filter(args.inpfile, args.outfile, sep=args.sep)
 
 
 if __name__ == "__main__":

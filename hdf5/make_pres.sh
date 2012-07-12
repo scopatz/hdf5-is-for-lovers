@@ -6,9 +6,11 @@ if [ -f ${HOME}/.matplotlib/matplotlibrc -a ! -f ${HOME}/.matplotlib/matplotlibr
     mv ${HOME}/.matplotlib/matplotlibrc ${HOME}/.matplotlib/matplotlibrc.presbak
 fi
 
-# make slides with swapped matplotlibrc
+# make slides with swapped matplotlibrc and filters
 cp matplotlibrc ${HOME}/.matplotlib/matplotlibrc
-python pagenum_filter.py ${PRESNAME}.rst ${PRESNAME}.tmp.rst
+cp ${PRESNAME}.rst ${PRESNAME}.tmp.rst
+python pagenum_filter.py ${PRESNAME}.tmp.rst -o ${PRESNAME}.tmp.rst
+python slidebreak_filter.py ${PRESNAME}.tmp.rst -o ${PRESNAME}.tmp.rst
 rst2pdf ${PRESNAME}.tmp.rst -b1 -s slides.style -o ${PRESNAME}.pdf --fit-background-mode=center
 rm ${PRESNAME}.tmp.rst
 rm ${HOME}/.matplotlib/matplotlibrc 
