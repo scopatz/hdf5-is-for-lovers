@@ -34,7 +34,7 @@ with open('ships.txt', 'r') as f:
 def rand_sailor():
     first = random.choice(first_names)
     last = random.choice(last_names)
-    lat_long = np.random.random((2,)) * (180.0, 90.0)
+    lat_long = np.random.random((2,)) * (180.0, 360.0) - (90.0, 180.0)
     num_ships = np.random.random_integers(1,5)
     ships = list(np.random.choice(ship_names, num_ships, replace=False))
     lost = bool(np.random.random_integers(0,1))
@@ -72,16 +72,39 @@ for i in range(1000):
     ships.extend([''] * (5 - len(ships)))
     raw_sailors.append((first, last, lat_long, ships, lost))
 sailors = np.array(raw_sailors, dtype=desc)
-print sailors
+
+f.createTable('/', 'sailors', sailors)
 
 
 # 3. Resuce patrols are dispatched by quarter.  Using the lattitude and 
 #    longitude, create groups representing the NE, NW, SE, and SW and place
 #    smaller tables of just these sailors.
+quads = {'NE': [(0.0, 90.0), (0.0, 180.0)],
+         'NW': [(0.0, 90.0), (-180.0, 0.0)],
+         'SE': [(-90.0, 0.0), (0.0, 180.0)],
+         'SW': [(-90.0, 0.0), (-180.0, 0.0)],
+        }
+
+for quad in quads:
+    f.createGroup('/', quad)
+    lower_lat_mask = quads[quad][0][0] < sailors['location']['lat']
+    upper_lat_mask = quads[quad][0][1] > sailors['location']['lat']
+    lower_long_mask = quads[quad][1][0] < sailors['location']['long']
+    upper_long_mask = quads[quad][1][1] > sailors['location']['long']
+    mask = lower_lat_mask & upper_lat_mask & lower_long_mask & upper_long_mask
+    f.createTable('/' + quad, 'sailors', sailors[mask])
 
 # 4. Rescue patrols also need up to date information on whether a not 
 #    a person is lost.  Create two tables (lost & found) in each of the 
 #    four directions which approriately elliminate the lost-at-sea status.
 
+    lost_mask = mask & sailors['lost']
+    lost_sailors = sailors[lost_mask][['first', 'last', 'location', 'ships']]
+    f.createTable('/' + quad, 'lost', lost_sailors)
 
+    found_mask = mask & ~sailors['lost']
+    found_sailors = sailors[found_mask][['first', 'last', 'location', 'ships']]
+    f.createTable('/' + quad, 'found', found_sailors)
+
+# Remember to always close the file!
 f.close()
