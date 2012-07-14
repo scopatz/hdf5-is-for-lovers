@@ -607,6 +607,34 @@ Tables
     // Write the row
     H5Dwrite(data_set, desc, mem_space, data_hyperslab, H5P_DEFAULT, mat_data);
 
+Exercise
+===============================
+.. container:: align-center
+
+    **exer/census.py** 
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. image:: img/noneshallpass.jpg
+    :scale: 50%
+
+Exercise
+===============================
+.. container:: align-center
+
+    **sol/census.py** 
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. image:: img/theblackknighttriumph.jpg
+    :scale: 45%
+
+
+
 
 Acknowlegdements
 ===============================
