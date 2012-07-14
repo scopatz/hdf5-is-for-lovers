@@ -562,6 +562,52 @@ Tables
     :scale: 40%
 
 
+Tables
+===============================
+Python already has the ability to dynamically declare the size of 
+descriptions.  
+
+.. break
+
+This is accomplished in compiled languges through nomral memory allocation 
+and carefule byte counting:
+
+.. code-block:: C
+
+    typedef struct mat {
+      double mass;
+      int atoms_per_mol;
+      double comp [];
+    } mat;
+
+Tables
+===============================
+.. code-block:: C
+
+    typedef struct mat {
+      double mass;
+      int atoms_per_mol;
+      double comp [];
+    } mat;
+
+    size_t mat_size = sizeof(mat) + sizeof(double)*comp_size;
+    hid_t desc = H5Tcreate(H5T_COMPOUND, mat_size);
+    hid_t comptype = H5Tarray_create2(H5T_NATIVE_DOUBLE, 1, nuc_dims);
+
+    // make the data table type
+    H5Tinsert(desc, "mass", HOFFSET(mat, mass), H5T_NATIVE_DOUBLE);
+    H5Tinsert(desc, "atoms_per_mol", HOFFSET(mat, atoms_per_mol), H5T_NATIVE_DOUBLE);
+    H5Tinsert(desc, "comp", HOFFSET(mat, comp), comp_type);
+
+    // make the data array for a single row, have to over-allocate
+    mat * mat_data  = new mat[mat_size];
+
+    // ...fill in data array...
+
+    // Write the row
+    H5Dwrite(data_set, desc, mem_space, data_hyperslab, H5P_DEFAULT, mat_data);
+
+
 Acknowlegdements
 ===============================
 
