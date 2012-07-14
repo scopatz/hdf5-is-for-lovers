@@ -191,6 +191,75 @@ A Brief Introduction
 Instead, you want a real *database* with the ability to store many datasets, user-defined
 metadata, optimized I/O, and the ability to query its contents.
 
+.. break
+
+Unlike SQL, where every dataset lives in a flat namespace, HDF allows datasets to 
+live in a nested tree structure.
+
+.. break
+
+In effect, HDF5 is a file system with a file.  
+
+.. break
+
+(More on this later.)
+
+
+A Brief Introduction
+===========================
+Basic dataset classes include:
+
+    * Array
+    * CArray (chunked array)
+    * EArray (extensible array)
+    * Table (structured array w/ named fields)
+
+.. break
+
+All of these must be composed of atomic types.
+
+A Brief Introduction
+===========================
+There are six kinds of types supported by PyTables:
+
+- bool: Boolean (true/false) types. 8 bits.
+
+.. break
+
+- int: Signed integer types. 8, 16, 32 (default) and 64 bits.
+
+.. break
+
+- uint: Unsigned integers. 8, 16, 32 (default) and 64 bits.
+
+.. break
+
+- float: Floating point types. 16, 32 and 64 (default) bits.
+
+.. break
+
+- complex: Complex number. 64 and 128 (default) bits.
+
+.. break
+
+- string: Raw string types. 8-bit positive multiples.
+
+
+A Brief Introduction
+===========================
+Other elements of the heirarchy may include:
+
+    * Groups (dirs)
+    * Links
+    * File Nodes
+    * Hidden Nodes
+
+
+
+
+Acknowlegdements
+===============================
+
 Questions
 ===============================
 .. image:: img/qm.jpg
