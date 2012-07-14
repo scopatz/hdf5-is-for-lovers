@@ -265,7 +265,6 @@ Opening Files
 .. code-block:: python
 
     import tables as tb
-
     f = tb.openFile('/path/to/file', 'a')
 
 .. break
@@ -277,6 +276,105 @@ Opening Files
   and if the file does not exist it is created.
 * *'r+'*: It is similar to 'a', but the file must already exist.
 
+Using the Heirarchy
+==============================
+In HDF5, all nodes stem from a root ("``/``" or ``f.root``).
+
+.. break
+
+In PyTables, you may access nodes as attributes on a Python object
+(``f.root.a_group.some_data``).  
+
+.. break
+
+This is known as natural naming.
+
+.. break
+
+Creating new nodes must be done on the file handle:
+
+.. code-block:: python
+
+    f.createGroup('/', 'a_group', "My Group")
+    f.root.a_group
+
+Creating Datasets
+==============================
+The two most common datasets are Tables & Arrays.
+
+.. break
+
+Appropriate create methods live on the file handle:
+
+.. code-block:: python
+
+    # integer array
+    f.createArray('/a_group', 'arthur_count', [1, 2, 5, 3])
+
+.. break
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. code-block:: python
+
+    # tables, need descriptions
+    dt = np.dtype([('id', int), ('name', 'S10')])
+    knights = np.array([(42, 'Lancelot'), (12, 'Bedivere')], dtype=dt)
+    f.createTable('/', 'knights', dt)
+    f.root.knights.append(knights)
+
+Reading Datasets
+==============================
+Arrays and Tables try to preseve the original flavor that they were created with. 
+
+.. break
+
+.. code-block:: python 
+
+    >>> print f.root.a_group.arthur_count[:]
+    [1, 2, 5, 3]
+
+    >>> type(f.root.a_group.arthur_count[:])
+    list
+
+    >>> type(f.root.a_group.arthur_count)
+    tables.array.Array
+
+Reading Datasets
+==============================
+So if they come from NumPy arrays, they may be accessed in a numpy-like fashion 
+(slicing, fancy indexing, masking).
+
+.. break
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. code-block:: python 
+
+    >>> f.root.knights[1]
+    (12, 'Bedivere')
+
+    >>> f.root.knights[:1]
+    array([(42, 'Lancelot')], dtype=[('id', '<i8'), ('name', 'S10')])
+
+    >>> mask = (f.root.knights.cols.id[:] < 28)
+    >>> f.root.knights[mask]
+    array([(12, 'Bedivere')], dtype=[('id', '<i8'), ('name', 'S10')])
+
+    >>> f.root.knights[([1, 0],)]
+    array([(12, 'Bedivere'), (42, 'Lancelot')], dtype=[('id', '<i8'), ('name', 'S10')])
+
+.. break
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+Data accessed in this way is *memory mapped*.
 
 Acknowlegdements
 ===============================
