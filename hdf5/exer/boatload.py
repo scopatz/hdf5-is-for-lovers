@@ -40,7 +40,7 @@ def rand_sailor():
     lost = bool(np.random.random_integers(0,1))
     return first, last, lat_long, ships, lost
 
-f = tb.openFile('census.h5', 'a')
+f = tb.openFile('boatload.h5', 'a')
 
 # 1. Define the description.  This should include:
 #
@@ -54,26 +54,10 @@ max_first_len = max([len(x) for x in first_names])
 max_last_len = max([len(x) for x in last_names])
 max_ship_len = max([len(x) for x in ship_names])
 
-desc = np.dtype([('first', 'S' + str(max_first_len)), 
-                 ('last', 'S' + str(max_last_len)), 
-                 ('location', [
-                    ('lat', float),
-                    ('long', float),
-                    ]),
-                 ('ships', 'S' + str(max_ship_len), (5,)),
-                 ('lost', bool),
-                ])
+desc = np.dtype([])
 
 
 # 2. Use the rand_sailor function to write a table of all of these people.
-raw_sailors = []
-for i in range(1000):
-    first, last, lat_long, ships, lost = rand_sailor()
-    ships.extend([''] * (5 - len(ships)))
-    raw_sailors.append((first, last, lat_long, ships, lost))
-sailors = np.array(raw_sailors, dtype=desc)
-
-f.createTable('/', 'sailors', sailors)
 
 
 # 3. Resuce patrols are dispatched by quarter.  Using the lattitude and 
@@ -85,26 +69,10 @@ quads = {'NE': [(0.0, 90.0), (0.0, 180.0)],
          'SW': [(-90.0, 0.0), (-180.0, 0.0)],
         }
 
-for quad in quads:
-    f.createGroup('/', quad)
-    lower_lat_mask = quads[quad][0][0] < sailors['location']['lat']
-    upper_lat_mask = quads[quad][0][1] > sailors['location']['lat']
-    lower_long_mask = quads[quad][1][0] < sailors['location']['long']
-    upper_long_mask = quads[quad][1][1] > sailors['location']['long']
-    mask = lower_lat_mask & upper_lat_mask & lower_long_mask & upper_long_mask
-    f.createTable('/' + quad, 'sailors', sailors[mask])
-
 # 4. Rescue patrols also need up to date information on whether a not 
 #    a person is lost.  Create two tables (lost & found) in each of the 
 #    four directions which approriately elliminate the lost-at-sea status.
 
-    lost_mask = mask & sailors['lost']
-    lost_sailors = sailors[lost_mask][['first', 'last', 'location', 'ships']]
-    f.createTable('/' + quad, 'lost', lost_sailors)
-
-    found_mask = mask & ~sailors['lost']
-    found_sailors = sailors[found_mask][['first', 'last', 'location', 'ships']]
-    f.createTable('/' + quad, 'found', found_sailors)
 
 # Remember to always close the file!
 f.close()

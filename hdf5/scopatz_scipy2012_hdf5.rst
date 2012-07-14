@@ -611,7 +611,7 @@ Exercise
 ===============================
 .. container:: align-center
 
-    **exer/census.py** 
+    **exer/boatload.py** 
 
 .. raw:: pdf
 
@@ -624,7 +624,7 @@ Exercise
 ===============================
 .. container:: align-center
 
-    **sol/census.py** 
+    **sol/boatload.py** 
 
 .. raw:: pdf
 
