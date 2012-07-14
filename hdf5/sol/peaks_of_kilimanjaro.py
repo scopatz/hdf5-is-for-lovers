@@ -10,9 +10,9 @@ about the team.  This needs to include:
 The info he has about the team is their first name, last name, age, and 
 whether they are alive or not.
 
-Suddenly, he has forgotten the first half of team's names.  
+Suddenly, he has forgotten every other team member's name!  
 
-    3. Please read these off for him.
+    3. Please read these off for him, but only if they are alive
 
 Careful out there!
 """
@@ -31,3 +31,25 @@ team = [('Flavia',   'Jacquin',   21, True),
         ('Britt',    'Housemate', 32, False),
         ('Eldridge', 'Lerow',     72, False),
         ]
+
+f = tb.openFile('expidition.h5', 'w')
+
+# 1.
+teamdt = np.dtype([('first', 'S10'), ('last', 'S10'), 
+                   ('age', int), ('alive', bool)])
+team = np.array(team, dtype=teamdt)
+f.createTable('/', 'team', team)
+
+# 2.
+shape = (len(team), 1000000)
+o2dep = np.zeros(shape, float) 
+f.createArray('/', 'o2dep', o2dep, "help I can't breathe!")
+f.flush()
+
+
+# 3.
+for first, last, age, alive in f.root.team[::2]:
+    if alive:
+        print first + " " + last
+
+f.close()
