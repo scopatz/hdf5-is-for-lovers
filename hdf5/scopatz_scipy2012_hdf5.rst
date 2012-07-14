@@ -376,6 +376,15 @@ So if they come from NumPy arrays, they may be accessed in a numpy-like fashion
 
 Data accessed in this way is *memory mapped*.
 
+Exercise
+===============================
+.. container:: align-center
+
+    **exer/peaks_of_kilimanjaro.py** 
+
+.. image:: img/noneshallpass.jpg
+    :scale: 50%
+
 Acknowlegdements
 ===============================
 
