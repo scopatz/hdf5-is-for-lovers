@@ -402,6 +402,166 @@ Exercise
 .. image:: img/theblackknighttriumph.jpg
     :scale: 45%
 
+
+Heirarchy Layout
+===============================
+Suppose there is a big table of like-things:
+
+.. code-block:: python
+
+    # people:  name,            proffession,   home
+    people = [('Arthur',        'King',        'Camelot'), 
+              ('Lancelot',      'Knight',      'Lake'), 
+              ('Bedevere',      'Knight',      'Wales'), 
+              ('Witch',         'Witch',       'Village'), 
+              ('Gaurd',         'Man-at-Arms', 'Swamp Castle'),
+              ('Ni',            'Knight',      'Shrubbery'),
+              ('Strange Woman', 'Lady',        'Lake'),
+              ...
+              ]
+
+.. break
+
+It is tempting to throw everyone into a big ``people`` table.
+
+Heirarchy Layout
+===============================
+However, a search over a class of people can be eliminated by splitting 
+these tables up:
+
+.. code-block:: python 
+
+    knight = [('Lancelot',      'Knight',      'Lake'),
+              ('Bedevere',      'Knight',      'Wales'), 
+              ('Ni',            'Knight',      'Shrubbery'),
+              ]
+
+    others = [('Arthur',        'King',        'Camelot'), 
+              ('Witch',         'Witch',       'Village'), 
+              ('Gaurd',         'Man-at-Arms', 'Swamp Castle'),
+              ('Strange Woman', 'Lady',        'Lake'),
+              ...
+              ]
+
+Heirarchy Layout
+===============================
+The proffession column is now redundant:
+
+.. code-block:: python 
+
+    knight = [('Lancelot', 'Lake'),
+              ('Bedevere', 'Wales'), 
+              ('Ni',       'Shrubbery'),
+              ]
+
+    others = [('Arthur',        'King',        'Camelot'), 
+              ('Witch',         'Witch',       'Village'), 
+              ('Gaurd',         'Man-at-Arms', 'Swamp Castle'),
+              ('Strange Woman', 'Lady',        'Lake'),
+              ...
+              ]
+
+
+Heirarchy Layout
+===============================
+Information can be embeded implicitly in the heiracrhy as well::
+
+    root
+      | - England
+      |     | - knight
+      |     | - others
+      |
+      | - France
+      |     | - knight
+      |     | - others
+
+Heirarchy Layout
+===============================
+Why bother pivoting the data like this at all?
+
+.. break
+
+    * Fewer rows to search over.
+
+.. break
+
+    * Fewer rows to pull from disk.
+
+.. break
+
+    * Fewer columns in description.
+
+.. break
+
+Ultimately, it is all about *speed*, especially for big tables.
+
+Access Time Analogy
+==============================
+.. container:: small
+
+    If a processor's access of L1 cache is analogous to you finding a 
+    word on a computer screen (3 seconds), then
+
+.. break
+
+    Accessing L2 cache is getting a book from a bookshelf (15 s).
+
+.. break
+
+    Accessing main memory is going to the break room, get a candy bar, 
+    and chat with your co-worker (4 min).
+
+.. break
+
+    Accessing a (mechanical) HDD is leaving your office, leaving your building, 
+    wandering the planet for a year and four months to return to your desk with 
+    the information finally made available.
+
+.. container:: gray-and-small
+
+    Thanks K. Smith & http://duartes.org/gustavo/blog/post/what-your-computer-does-while-you-wait
+
+Tables
+===============================
+Tables are a high-level interface to extendable arrays of structs.  
+
+.. break
+
+Sort-of.
+
+.. break
+
+In fact, the struct / dtype / description concept is only a convienent way to assign 
+meaning to bytes::
+
+    |  ids  |       first       |        last       |
+    |-------|-------------------|-------------------|
+    | | | | | | | | | | | | | | | | | | | | | | | | | 
+
+Tables
+===============================
+Data types may be nested (though they are stored in flattened way).
+
+.. code-block:: python
+
+    dt = np.dtype([('id', int), 
+                   ('first', 'S5'),
+                   ('last',  'S5'),
+                   ('parents', [
+                        ('mom_id', int),
+                        ('dad_id', int),
+                    ]),
+                  ])
+
+    people = np.fromstring(np.random.bytes(dt.itemsize * 10000), dt)
+    f.createTable('/', 'random_peeps', people)
+
+Tables
+===============================
+.. image:: img/random_peeps.png
+    :scale: 40%
+
+
 Acknowlegdements
 ===============================
 

@@ -38,6 +38,11 @@
                 #"spaceAfter": 20,
                 "fontSize": 16
                 }],
+             ["small", {"alignment":"left",
+                "textColor": "black",
+                "spaceAfter": 20,
+                "fontSize": 26
+                }],
              ["warning", {"alignment":"center",
                 "fontName": "stdBold",
                 "textColor": "#FF0000",
