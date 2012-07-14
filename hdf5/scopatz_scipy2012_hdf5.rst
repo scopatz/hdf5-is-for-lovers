@@ -351,7 +351,7 @@ So if they come from NumPy arrays, they may be accessed in a numpy-like fashion
 
 .. raw:: pdf
 
-    Spacer 0 20
+    Spacer 0 15
 
 .. code-block:: python 
 
@@ -372,7 +372,7 @@ So if they come from NumPy arrays, they may be accessed in a numpy-like fashion
 
 .. raw:: pdf
 
-    Spacer 0 20
+    Spacer 0 15
 
 Data accessed in this way is *memory mapped*.
 
@@ -382,8 +382,25 @@ Exercise
 
     **exer/peaks_of_kilimanjaro.py** 
 
+.. raw:: pdf
+
+    Spacer 0 20
+
 .. image:: img/noneshallpass.jpg
     :scale: 50%
+
+Exercise
+===============================
+.. container:: align-center
+
+    **sol/peaks_of_kilimanjaro.py** 
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. image:: img/theblackknighttriumph.jpg
+    :scale: 45%
 
 Acknowlegdements
 ===============================
