@@ -260,6 +260,23 @@ Other elements of the heirarchy may include:
 PyTables docs may be found at http://pytables.github.com/
 
 
+Opening Files
+=============================
+.. code-block:: python
+
+    import tables as tb
+
+    f = tb.openFile('/path/to/file', 'a')
+
+.. break
+
+* *'r'*: Read-only; no data can be modified.
+* *'w'*: Write; a new file is created (an existing file with the
+  same name would be deleted).
+* *'a'*: Append; an existing file is opened for reading and writing,
+  and if the file does not exist it is created.
+* *'r+'*: It is similar to 'a', but the file must already exist.
+
 
 Acknowlegdements
 ===============================
