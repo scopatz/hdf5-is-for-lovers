@@ -211,7 +211,8 @@ Basic dataset classes include:
 
     * Array
     * CArray (chunked array)
-    * EArray (extensible array)
+    * EArray (extendable array)
+    * VLArray (variable length array)
     * Table (structured array w/ named fields)
 
 .. break
@@ -254,6 +255,9 @@ Other elements of the heirarchy may include:
     * File Nodes
     * Hidden Nodes
 
+.. break
+
+PyTables docs may be found at http://pytables.github.com/
 
 
 
