@@ -864,6 +864,53 @@ Out-of-Core Operations
         add(r2, r3, r2); add(r2,  6, r2)
         c[i:i+256] = r2
 
+Out-of-Core Operations
+===============================
+This is the basic idea behind numexpr, which provides a general 
+virtual machine for NumPy arrays.
+
+.. break
+
+This problem lends itself nicely to parallelism.  
+
+.. break
+
+Numexpr has low-level multithreading, avoiding the GIL.
+
+.. break
+
+PyTables implements a ``tb.Expr`` class which backends to the numexpr VM
+but has additional optimizations for disk reading and writing.
+
+.. break
+
+The full array need never be in memory.
+
+Out-of-Core Operations
+===============================
+Fully out-of-core expression example:
+
+.. raw:: pdf
+
+    Spacer 0 10
+
+.. code-block:: python
+
+    shape = (10, 10000)
+    f = tb.openFile("/tmp/expression.h5", "w")
+
+    a = f.createCArray(f.root, 'a', tb.Float32Atom(dflt=1.), shape)
+    b = f.createCArray(f.root, 'b', tb.Float32Atom(dflt=2.), shape)
+    c = f.createCArray(f.root, 'c', tb.Float32Atom(dflt=3.), shape)
+    out = f.createCArray(f.root, 'out', tb.Float32Atom(dflt=3.), shape)
+
+    expr = tb.Expr("a*b+c")
+    expr.setOutput(out)
+    d = expr.eval()
+
+    print "returned-->", repr(d)
+    f.close()
+
 
 Acknowledgements
 ===============================
