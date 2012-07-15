@@ -183,7 +183,7 @@ However, you often want some thing more than a binary chunk of data in a file.
 
 .. break
 
-.. note:: This is the mechnaism behind ``numpy.save()`` and ``numpy.savez()``.
+.. note:: This is the mechanism behind ``numpy.save()`` and ``numpy.savez()``.
 
 
 A Brief Introduction
@@ -252,7 +252,7 @@ There are six kinds of types supported by PyTables:
 
 A Brief Introduction
 ===========================
-Other elements of the heirarchy may include:
+Other elements of the hierarchy may include:
 
     * Groups (dirs)
     * Links
@@ -280,7 +280,7 @@ Opening Files
   and if the file does not exist it is created.
 * *'r+'*: It is similar to 'a', but the file must already exist.
 
-Using the Heirarchy
+Using the Hierarchy
 ==============================
 In HDF5, all nodes stem from a root ("``/``" or ``f.root``).
 
@@ -331,7 +331,7 @@ Appropriate create methods live on the file handle:
 
 Reading Datasets
 ==============================
-Arrays and Tables try to preseve the original flavor that they were created with. 
+Arrays and Tables try to preserve the original flavor that they were created with. 
 
 .. break
 
@@ -408,18 +408,18 @@ Exercise
     :scale: 45%
 
 
-Heirarchy Layout
+Hierarchy Layout
 ===============================
 Suppose there is a big table of like-things:
 
 .. code-block:: python
 
-    # people:  name,            proffession,   home
+    # people:  name,            profession,   home
     people = [('Arthur',        'King',        'Camelot'), 
               ('Lancelot',      'Knight',      'Lake'), 
               ('Bedevere',      'Knight',      'Wales'), 
               ('Witch',         'Witch',       'Village'), 
-              ('Gaurd',         'Man-at-Arms', 'Swamp Castle'),
+              ('Guard',         'Man-at-Arms', 'Swamp Castle'),
               ('Ni',            'Knight',      'Shrubbery'),
               ('Strange Woman', 'Lady',        'Lake'),
               ...
@@ -429,7 +429,7 @@ Suppose there is a big table of like-things:
 
 It is tempting to throw everyone into a big ``people`` table.
 
-Heirarchy Layout
+Hierarchy Layout
 ===============================
 However, a search over a class of people can be eliminated by splitting 
 these tables up:
@@ -443,14 +443,14 @@ these tables up:
 
     others = [('Arthur',        'King',        'Camelot'), 
               ('Witch',         'Witch',       'Village'), 
-              ('Gaurd',         'Man-at-Arms', 'Swamp Castle'),
+              ('Guard',         'Man-at-Arms', 'Swamp Castle'),
               ('Strange Woman', 'Lady',        'Lake'),
               ...
               ]
 
-Heirarchy Layout
+Hierarchy Layout
 ===============================
-The proffession column is now redundant:
+The profession column is now redundant:
 
 .. code-block:: python 
 
@@ -461,15 +461,15 @@ The proffession column is now redundant:
 
     others = [('Arthur',        'King',        'Camelot'), 
               ('Witch',         'Witch',       'Village'), 
-              ('Gaurd',         'Man-at-Arms', 'Swamp Castle'),
+              ('Guard',         'Man-at-Arms', 'Swamp Castle'),
               ('Strange Woman', 'Lady',        'Lake'),
               ...
               ]
 
 
-Heirarchy Layout
+Hierarchy Layout
 ===============================
-Information can be embeded implicitly in the heiracrhy as well::
+Information can be embedded implicitly in the hierarchy as well::
 
     root
       | - England
@@ -480,7 +480,7 @@ Information can be embeded implicitly in the heiracrhy as well::
       |     | - knight
       |     | - others
 
-Heirarchy Layout
+Hierarchy Layout
 ===============================
 Why bother pivoting the data like this at all?
 
@@ -536,7 +536,7 @@ Sort-of.
 
 .. break
 
-In fact, the struct / dtype / description concept is only a convienent way to assign 
+In fact, the struct / dtype / description concept is only a convenient way to assign 
 meaning to bytes::
 
     |  ids  |       first       |        last       |
@@ -574,8 +574,8 @@ descriptions.
 
 .. break
 
-This is accomplished in compiled languges through nomral memory allocation 
-and carefule byte counting:
+This is accomplished in compiled languages through normal memory allocation 
+and careful byte counting:
 
 .. code-block:: C
 
@@ -659,7 +659,7 @@ file and in dataspace must be stored.
 .. break
 
 By chunking, sparse data may be stored efficiently and 
-datasets may extend infitinely in all dimensions.
+datasets may extend infinitely in all dimensions.
 
 .. break
 
@@ -771,19 +771,19 @@ Recall access time analogy (wander Earth for 16 months).
 
 .. break
 
-    * Opperations which require all data to be in memory are *in-core* and 
+    * Operations which require all data to be in memory are *in-core* and 
       may be memory bound (NumPy).
 
 .. break
 
-    * Opperations where the dataset is external to memory are *out-of-core*
+    * Operations where the dataset is external to memory are *out-of-core*
       (or *in-kernel*) and may be CPU bound.
 
-In-Core Opperations
+In-Core Operations
 ==============================
 
 
-Acknowlegdements
+Acknowledgements
 ===============================
 
 Questions
