@@ -391,6 +391,7 @@ Exercise
 
 Exercise
 ===============================
+
 .. container:: align-center
 
     **sol/peaks_of_kilimanjaro.py** 
@@ -622,6 +623,7 @@ Exercise
 
 Exercise
 ===============================
+
 .. container:: align-center
 
     **sol/boatload.py** 
@@ -634,6 +636,118 @@ Exercise
     :scale: 45%
 
 
+Chunking
+===============================
+Chunking is a feature with no direct analogy in NumPy.
+
+.. break
+
+.. container:: align-center
+
+    *Chunking is the ability to split up a dataset into smaller 
+    blocks of equal or lesser rank.*
+
+.. break
+
+Extra metadata pointing to the location of the chunk in the 
+file and in dataspace must be stored.
+
+.. break
+
+By chunking, sparse data may be stored efficiently and 
+datasets may extend infitinely in all dimensions.
+
+.. break
+
+.. container:: small
+
+    **Note:** Currently, PyTables only allows one extendable dim.
+
+Chunking
+===============================
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. figure:: img/dset_contiguous.jpg
+
+    Contiguous Dataset
+
+.. raw:: pdf
+
+    Spacer 0 50
+
+.. figure:: img/dset_chunked.jpg
+
+    Chunked Dataset
+
+Chunking
+===============================
+All I/O happens by chunk.  This is important for:
+
+    * edge chunks may extend beyond the dataset
+
+.. break
+
+    * default fill values are set in unallocated space
+
+.. break
+
+    * reading and writing in parallel
+
+.. break
+
+    * small chunks are good for accessing some of data
+
+.. break
+
+    * large chunks are good for accessing lots of data
+
+
+
+Chunking
+===============================
+Any chunked dataset allows you to set the chunksize.
+
+.. break
+
+For example, a 4x4 chunked array could have a 3x3 chunksize.
+
+.. break
+
+However, it could not have a 12x12 chunksize, since the ranks must be 
+less than or equal to that of the array.
+
+.. break
+
+Manipulating the chunksize is a great way to fine-tune an application.
+
+Chunking
+===============================
+.. figure:: img/dset_contiguous4x4.jpg
+
+    Contiguous 4x4 Dataset
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. figure:: img/dset_chunked4x4.jpg
+
+    Chunked 4x4 Dataset
+
+Chunking
+===============================
+Note that the addresses of chunks in dataspace (memory) has 
+no bearing on their arrangement in the actual file.
+
+.. raw:: pdf
+
+    Spacer 0 40
+
+.. figure:: img/dset_address_space.jpg
+
+    Dataspace (top) vs File (bottom) Chunk Locations
 
 
 Acknowlegdements
