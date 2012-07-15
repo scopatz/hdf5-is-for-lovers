@@ -840,6 +840,30 @@ evaluation:
     Even with in memory NumPy arrays, there are problems with 
     gratuitous Python type checking. 
 
+Out-of-Core Operations
+===============================
+.. container:: font-size-24
+
+    Say there was a virtual machine (or kernel) which could be 
+    fed arrays and perform specified operations.
+
+.. break
+
+    Giving this machine only chunks of data at a time, it 
+    could function on infinite-length data using only finite 
+    memory.
+
+.. break
+
+.. code-block:: python
+
+    for i in range(0, len(a), 256):
+        r0, r1 = a[i:i+256], b[i:i+256]
+        multiply(r0, 42, r2)
+        multiply(r1, 28, r3)
+        add(r2, r3, r2); add(r2,  6, r2)
+        c[i:i+256] = r2
+
 
 Acknowledgements
 ===============================
