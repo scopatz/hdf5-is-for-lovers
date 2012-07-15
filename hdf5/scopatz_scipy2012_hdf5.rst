@@ -990,6 +990,34 @@ Querying
 
     Complex query with 1 billion rows. Too big for memory.
 
+Exercise
+===============================
+.. container:: align-center
+
+    **exer/crono.py** 
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. image:: img/noneshallpass.jpg
+    :scale: 50%
+
+Exercise
+===============================
+
+.. container:: align-center
+
+    **sol/crono.py** 
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. image:: img/theblackknighttriumph.jpg
+    :scale: 45%
+
+
 
 Acknowledgements
 ===============================
