@@ -911,6 +911,85 @@ Fully out-of-core expression example:
     print "returned-->", repr(d)
     f.close()
 
+Querying
+===============================
+The most common operation is asking an existing dataset
+whether its elements satisfy some criteria.  
+This is known as *querying*.  
+
+.. break
+
+Because querying is so common PyTables defines special methods on 
+Tables.
+
+.. break
+
+.. code-block:: python
+
+    tb.Table.where(cond)
+    tb.Table.getWhereList(cond)
+    tb.Table.readWhere(cond)
+    tb.Table.whereAppend(dest, cond)
+
+Querying
+===============================
+The conditions used in ``where()`` calls are strings which are 
+evaluated by numexpr.  These expressions must return boolean
+values.
+
+.. break
+
+They are executed in the context of table itself combined with 
+``locals()`` and ``globals()``.
+
+.. break
+
+The ``where()`` method itself returns an iterator over all 
+matched (hit) rows:
+
+.. code-block:: python
+
+    for row in table.where('(col1 < 42) & (col2 == col3)'):
+        # do something with row
+
+Querying
+===============================
+For a speed comparision, here is a complex query using 
+regular Python:
+
+.. code-block:: python
+
+    result = [row['col2'] for row in table if (
+              ((row['col4'] >= lim1 and row['col4'] < lim2) or
+              ((row['col2'] > lim3 and row['col2'] < lim4])) and
+              ((row['col1']+3.1*row['col2']+row['col3']*row['col4']) > lim5)
+              )]
+
+.. break
+
+And this is the equivelent out-of-core search:
+
+.. code-block:: python
+
+    result = [row['col2'] for row in table.where(
+                '''(((col4 >= lim1) & (col4 < lim2)) |
+                   ((col2 > lim3) & (col2 < lim4)) &
+                   ((col1+3.1*col2+col3*col4) > lim5))''')]
+
+Querying
+===============================
+.. figure:: img/where_compare_10Mrow.png
+    :scale: 77%
+
+    Complex query with 10 million rows. Data fits in memory.
+
+Querying
+===============================
+.. figure:: img/where_compare_1Grow.png
+    :scale: 77%
+
+    Complex query with 1 billion rows. Too big for memory.
+
 
 Acknowledgements
 ===============================
