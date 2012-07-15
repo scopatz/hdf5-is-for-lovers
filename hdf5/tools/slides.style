@@ -43,6 +43,11 @@
                 "spaceAfter": 20,
                 "fontSize": 26
                 }],
+             ["font-size-24", {"alignment":"left",
+                "textColor": "black",
+                "spaceAfter": 20,
+                "fontSize": 24
+                }],
              ["warning", {"alignment":"center",
                 "fontName": "stdBold",
                 "textColor": "#FF0000",

@@ -207,17 +207,21 @@ In effect, HDF5 is a file system with a file.
 
 A Brief Introduction
 ===========================
-Basic dataset classes include:
+.. container:: font-size-24
 
-    * Array
-    * CArray (chunked array)
-    * EArray (extendable array)
-    * VLArray (variable length array)
-    * Table (structured array w/ named fields)
+    Basic dataset classes include:
+
+        * Array
+        * CArray (chunked array)
+        * EArray (extendable array)
+        * VLArray (variable length array)
+        * Table (structured array w/ named fields)
 
 .. break
 
-All of these must be composed of atomic types.
+.. container:: font-size-24
+
+    All of these must be composed of atomic types.
 
 A Brief Introduction
 ===========================
@@ -709,6 +713,10 @@ Chunking
 ===============================
 Any chunked dataset allows you to set the chunksize.
 
+.. code-block:: python
+
+    f.createTable('/', 'omnomnom', data, chunkshape=(42,42))
+
 .. break
 
 For example, a 4x4 chunked array could have a 3x3 chunksize.
@@ -748,6 +756,31 @@ no bearing on their arrangement in the actual file.
 .. figure:: img/dset_address_space.jpg
 
     Dataspace (top) vs File (bottom) Chunk Locations
+
+In-Core vs Out-of-Core
+===============================
+Calculations depend on the current memory layout.
+
+.. break
+
+Recall access time analogy (wander Earth for 16 months).
+
+.. break
+
+**Definitions:**
+
+.. break
+
+    * Opperations which require all data to be in memory are *in-core* and 
+      may be memory bound (NumPy).
+
+.. break
+
+    * Opperations where the dataset is external to memory are *out-of-core*
+      (or *in-kernel*) and may be CPU bound.
+
+In-Core Opperations
+==============================
 
 
 Acknowlegdements
