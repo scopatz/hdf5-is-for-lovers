@@ -781,6 +781,64 @@ Recall access time analogy (wander Earth for 16 months).
 
 In-Core Operations
 ==============================
+Say, ``a`` and ``b`` are arrays sitting in memory:
+
+.. raw:: pdf
+
+    Spacer 0 10
+
+.. code-block:: python
+
+    a = np.array(...)
+    b = np.array(...)
+    c = 42 * a + 28 * b + 6
+
+.. break
+
+.. raw:: pdf
+
+    Spacer 0 10
+
+The expression for ``c`` creates three temporary arrays!
+
+.. break
+
+For ``N`` operations, ``N-1`` temporaries are made.
+
+.. break
+
+Wastes memory and is slow.  Pulling from disk is slower.
+
+In-Core Operations
+==============================
+A less memory intensive implementation would be an element-wise
+evaluation:
+
+.. raw:: pdf
+
+    Spacer 0 10
+
+.. code-block:: python
+
+    c = np.empty(...)
+    for i in range(len(c)):
+        c[i] = 42 * a[i] + 28 * b[i] + 6
+
+.. break
+
+.. raw:: pdf
+
+    Spacer 0 10
+
+.. container:: font-size-24
+
+    But if ``a`` and ``b`` were HDF5 arrays on disk, individual 
+    element access time would kill you.  
+
+.. break
+
+    Even with in memory NumPy arrays, there are problems with 
+    gratuitous Python type checking. 
 
 
 Acknowledgements
