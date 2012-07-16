@@ -3,7 +3,7 @@ SciPy 2012 - Tutorials
 
 .. container:: main-title
 
-    HDF5 is for Lovers |nerd_candy_heart|
+    HDF 3.11 for Workgroups
 
 .. container:: main-names
 
@@ -18,9 +18,27 @@ SciPy 2012 - Tutorials
     scopatz@gmail.com
 
 
+SciPy 2012 - Tutorials
+==============================
+
+.. container:: main-title
+
+    HDF5 is for Lovers |nerd_candy_heart|
+
+.. container:: main-names
+
+    July 16th, 2012, SciPy, Austin, TX
+
+    Anthony Scopatz 
+
+    The FLASH Center
+
+    The University of Chicago
+
+    scopatz@gmail.com
+
 .. |nerd_candy_heart| image:: img/nerd_candy_heart.png 
                         :scale: 100%
-
 
 
 What is HDF5?
@@ -37,7 +55,7 @@ At its core HDF5 is binary file type specification.
 
 .. break
 
-However, what make HDF5 great is the numerous libraries written to interact 
+However, what makes HDF5 great is the numerous libraries written to interact 
 with files of this type and their *extremely rich* feature set.
 
 .. break
@@ -224,7 +242,7 @@ live in a nested tree structure.
 
 .. break
 
-In effect, HDF5 is a file system with a file.  
+In effect, HDF5 is a file system within a file.  
 
 .. break
 
@@ -238,9 +256,21 @@ A Brief Introduction
     Basic dataset classes include:
 
         * Array
+
+.. break
+
         * CArray (chunked array)
+
+.. break
+
         * EArray (extendable array)
+
+.. break
+
         * VLArray (variable length array)
+
+.. break
+
         * Table (structured array w/ named fields)
 
 .. break
@@ -281,8 +311,17 @@ A Brief Introduction
 Other elements of the hierarchy may include:
 
     * Groups (dirs)
+
+.. break
+
     * Links
+
+.. break
+
     * File Nodes
+
+.. break
+
     * Hidden Nodes
 
 .. break
@@ -540,7 +579,7 @@ Access Time Analogy
 .. break
 
     Accessing main memory is going to the break room, get a candy bar, 
-    and chat with your co-worker (4 min).
+    and chatting with your co-worker (4 min).
 
 .. break
 
