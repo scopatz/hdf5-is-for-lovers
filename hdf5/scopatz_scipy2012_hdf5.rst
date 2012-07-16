@@ -1082,6 +1082,120 @@ This is kind of like power steering, you can either tell wheels
 how to turn manually or you can tell the car how you want the wheels
 turned.
 
+Compression
+===============================
+Compresssion is a guarenteed feature of HDF5 itself.
+
+.. break
+
+At minimum, HDF5 requires zlib.
+
+.. break
+
+The compression capabilities feature a plugin architecture which 
+allow for a vareity of different algoritms, including user defined ones!
+
+.. break
+
+PyTables supports:
+
+.. container:: align-center
+
+    |bullet| zlib (default), |bullet| lzo, |bullet| bzip2, and |bullet| blosc.
+
+.. |bullet| unicode:: U+2022 
+
+Compression
+===============================
+Compression is enabled in PyTables through *filters*.
+
+.. break 
+
+.. raw:: pdf
+
+    Spacer 0 5
+
+.. code-block:: python
+
+    # complevel goes from [0,9]
+    filters = tb.Filters(complevel=5, complib='blosc', ...)
+
+.. break 
+
+    # filters may be set on the whole file,
+    f = tb.openFile('/path/to/file', 'a', filters=filters)
+    f.filters = filters
+
+.. break 
+
+    # filters may also be set on most other nodes
+    f.createTable('/', 'table', desc, filters=filters)
+    f.root.group._v_filters = filters
+
+.. break 
+
+.. raw:: pdf
+
+    Spacer 0 5
+
+Filters only act on chunked datasets.
+
+Compression
+===============================
+Tips for choosing compression parameters:
+
+.. break
+
+    * A mid-level (5) compression is sufficient. No need to go all the
+      way up (9).
+
+.. break
+
+    * Use zlib if you must guarentee complete portability.
+
+.. break
+
+    * Use blosc all other times.  It is optimized for HDF5.
+
+.. break
+
+*But why?* (I don't have time to go into the details of blosc. However
+here are some justifications...)
+
+Compression
+===============================
+.. figure:: img/compressed-recordsize-zlib.png
+
+    Comparison of different compression levels of zlib.
+
+Compression
+===============================
+.. figure:: img/create-chunksize-15GB.png
+    :scale: 70%
+
+    Creation time per element for a 15 GB EArray and different chunksizes.
+
+Compression
+===============================
+.. figure:: img/filesizes-chunksize-15GB.png
+    :scale: 80%
+
+    File sizes for a 15 GB EArray and different chunksizes.
+
+Compression
+===============================
+.. figure:: img/seq-chunksize-15GB.png
+    :scale: 70%
+
+    Sequential access time per element for a 15 GB EArray and different chunksizes.
+
+Compression
+===============================
+.. figure:: img/random-chunksize-15GB.png
+    :scale: 70%
+
+    Random access time per element for a 15 GB EArray and different chunksizes.
+
 Acknowledgements
 ===============================
 
