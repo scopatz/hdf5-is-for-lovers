@@ -524,7 +524,31 @@ Access Time Analogy
 
 .. container:: gray-and-small
 
-    Thanks K. Smith & http://duartes.org/gustavo/blog/post/what-your-computer-does-while-you-wait
+    Thanks K. Smith & 
+    http://duartes.org/gustavo/blog/post/what-your-computer-does-while-you-wait
+
+Starving CPU Problem
+===============================
+Waiting around for access times prior to computation is known as the 
+*Starving CPU Problem*.
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. image:: img/starving_cpu.png
+    :scale: 100%
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. container:: gray-and-small
+
+    Francesc Alted. 2010. Why Modern CPUs Are Starving and What Can 
+    Be Done about It. IEEE Des. Test 12, 2 (March 2010), 68-71. 
+    DOI=10.1109/MCSE.2010.51 http://dx.doi.org/10.1109/MCSE.2010.51
+
 
 Tables
 ===============================
@@ -1017,7 +1041,46 @@ Exercise
 .. image:: img/theblackknighttriumph.jpg
     :scale: 45%
 
+Compression
+===============================
+A more general way to solve the starving CPU problem is through
+*compression*.
 
+.. break
+
+Compression is when the dataset is piped through a zipping algorithm
+on write and the inverse unzipping algorthim on read.
+
+.. break 
+
+Each chunk is compressed independently, so chunks end up with a
+varying number bytes.
+
+.. break
+
+Has some storage overhead, but may drastically reduce file sizes for 
+very regular data.
+
+Compression
+===============================
+At first glance this is counter-intuitive. (*Why?*)
+
+.. break
+
+Compression/Decompression is clearly more CPU
+intensive than simply blitting an array into memory.
+
+.. break
+
+However, because there is *less total information* to transfer, 
+the time spent upacking the array can be far less than moving 
+the array around wholesale.
+
+.. break
+
+This is kind of like power steering, you can either tell wheels
+how to turn manually or you can tell the car how you want the wheels
+turned.
 
 Acknowledgements
 ===============================
