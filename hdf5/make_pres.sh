@@ -11,7 +11,7 @@ cp tools/matplotlibrc ${HOME}/.matplotlib/matplotlibrc
 cp ${PRESNAME}.rst ${PRESNAME}.tmp.rst
 python tools/pagenum_filter.py ${PRESNAME}.tmp.rst -o ${PRESNAME}.tmp.rst
 python tools/slidebreak_filter.py ${PRESNAME}.tmp.rst -o ${PRESNAME}.tmp.rst
-rst2pdf ${PRESNAME}.tmp.rst -b1 -s tools/slides.style -o ${PRESNAME}.pdf --fit-background-mode=center
+rst2pdf ${PRESNAME}.tmp.rst -b1 -s tools/slides.style,tango -o ${PRESNAME}.pdf --fit-background-mode=center
 rm ${PRESNAME}.tmp.rst
 rm ${HOME}/.matplotlib/matplotlibrc 
 

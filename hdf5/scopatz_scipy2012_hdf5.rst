@@ -996,9 +996,9 @@ And this is the equivelent out-of-core search:
 .. code-block:: python
 
     result = [row['col2'] for row in table.where(
-                '''(((col4 >= lim1) & (col4 < lim2)) |
-                   ((col2 > lim3) & (col2 < lim4)) &
-                   ((col1+3.1*col2+col3*col4) > lim5))''')]
+                '(((col4 >= lim1) & (col4 < lim2)) | '
+                '((col2 > lim3) & (col2 < lim4)) &   '
+                '((col1+3.1*col2+col3*col4) > lim5)) ')]
 
 Querying
 ===============================
@@ -1223,6 +1223,84 @@ Exercise
 .. image:: img/theblackknighttriumph.jpg
     :scale: 45%
 
+
+Other Python Data Structures
+===============================
+Overwhelmingly, numpy arrays have been the in-memory data
+structure of choice.
+
+.. break
+
+Using lists or tuples instead of arrays follows analogously.
+
+.. break
+
+It is data structures like sets and dictionaries which do not
+quite map.  
+
+.. break
+
+However, as long as all elements may be cast into the same atomic type, 
+these stuctures can be stored in HDF5 with relative ease.
+
+
+Sets
+===============================
+Example of serializing and deserializing sets:
+
+.. code-block:: python
+
+    >>> s = {1.0, 42, 77.7, 6E+01, True}
+
+    >>> f.createArray('/', 's', [float(x) for x in s])
+    /s (Array(4,)) ''
+      atom := Float64Atom(shape=(), dflt=0.0)
+      maindim := 0
+      flavor := 'python'
+      byteorder := 'little'
+      chunkshape := None
+
+    >>> set(f.root.s)
+    set([1.0, 42.0, 77.7, 60.0])
+
+Exercise
+===============================
+.. container:: align-center
+
+    **exer/dict_table.py** 
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. image:: img/noneshallpass.jpg
+    :scale: 50%
+
+Exercise
+===============================
+
+.. container:: align-center
+
+    **sol/dict_table.py** 
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. image:: img/theblackknighttriumph.jpg
+    :scale: 45%
+
+
+
+What Was Missed
+==============================
+* Walking Nodes
+* File Nodes
+* Indexing
+* Migrating to / from SQL
+* HDF5 in other database formats
+* Other Databases in HDF5
+* HDF5 as a File System
 
 Acknowledgements
 ===============================
