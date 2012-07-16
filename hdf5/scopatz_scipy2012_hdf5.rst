@@ -119,9 +119,35 @@ By a show of hands, how many people have used:
 
 * Other binary data formats? 
 
+
+Setup
+==============================
+.. raw:: pdf
+
+    Spacer 0 30
+
+Please clone the repo:
+
+.. raw:: pdf
+
+    Spacer 0 30
+
+.. code-block:: bash
+
+    git clone git://github.com/scopatz/scipy2012.git
+
+.. raw:: pdf
+
+    Spacer 0 30
+
+Or download a tarball from:
+
+    https://github.com/scopatz/scipy2012
+
+
 Warm up exercise
 ===============================
-In IPython
+In IPython:
 
 .. raw:: pdf
 
