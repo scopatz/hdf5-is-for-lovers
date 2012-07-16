@@ -978,7 +978,7 @@ matched (hit) rows:
 
 Querying
 ===============================
-For a speed comparision, here is a complex query using 
+For a speed comparison, here is a complex query using 
 regular Python:
 
 .. code-block:: python
@@ -991,7 +991,7 @@ regular Python:
 
 .. break
 
-And this is the equivelent out-of-core search:
+And this is the equivalent out-of-core search:
 
 .. code-block:: python
 
@@ -1049,7 +1049,7 @@ A more general way to solve the starving CPU problem is through
 .. break
 
 Compression is when the dataset is piped through a zipping algorithm
-on write and the inverse unzipping algorthim on read.
+on write and the inverse unzipping algorithm on read.
 
 .. break 
 
@@ -1073,7 +1073,7 @@ intensive than simply blitting an array into memory.
 .. break
 
 However, because there is *less total information* to transfer, 
-the time spent upacking the array can be far less than moving 
+the time spent unpacking the array can be far less than moving 
 the array around wholesale.
 
 .. break
@@ -1084,7 +1084,7 @@ turned.
 
 Compression
 ===============================
-Compresssion is a guarenteed feature of HDF5 itself.
+Compression is a guaranteed feature of HDF5 itself.
 
 .. break
 
@@ -1093,7 +1093,7 @@ At minimum, HDF5 requires zlib.
 .. break
 
 The compression capabilities feature a plugin architecture which 
-allow for a vareity of different algoritms, including user defined ones!
+allow for a variety of different algorithms, including user defined ones!
 
 .. break
 
@@ -1151,7 +1151,7 @@ Tips for choosing compression parameters:
 
 .. break
 
-    * Use zlib if you must guarentee complete portability.
+    * Use zlib if you must guarantee complete portability.
 
 .. break
 
@@ -1241,7 +1241,7 @@ quite map.
 .. break
 
 However, as long as all elements may be cast into the same atomic type, 
-these stuctures can be stored in HDF5 with relative ease.
+these structures can be stored in HDF5 with relative ease.
 
 
 Sets
@@ -1304,18 +1304,46 @@ What Was Missed
 
 Acknowledgements
 ===============================
+Many thanks to everyone who made this possible!
+
+.. break
+
+    * The HDF Group 
+
+.. break
+
+    * The PyTables Governance Team:
+
+.. container:: align-center
+
+    |bullet| Josh Moore, |bullet| Antonio Valentino, |bullet| Josh Ayers 
+
+Acknowledgements
+===============================
+(Cont.) 
+
+    * The NumPy Developers
+
+.. break
+
+    * h5py, the symbiotic project
+
+.. break
+
+    * Francesc Alted |nerd_candy_heart|
+
+.. break
+
+.. container:: align-center
+
+    **Shameless Plug:** *We are always looking for more hands. Join Now!*
 
 Questions
 ===============================
-.. image:: img/qm.jpg
-    :scale: 55%
-
 .. raw:: pdf
 
-    Spacer 0 20
+    Spacer 0 50
 
-.. container:: gray-and-small
-
-    Image source: http://www.fotopedia.com/items/flickr-2200500024
-
+.. image:: img/xkcd_bobby_tables.jpg
+    :scale: 600%
 
