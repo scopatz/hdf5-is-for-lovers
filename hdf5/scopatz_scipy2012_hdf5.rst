@@ -1196,6 +1196,34 @@ Compression
 
     Random access time per element for a 15 GB EArray and different chunksizes.
 
+Exercise
+===============================
+.. container:: align-center
+
+    **exer/spam_filter.py** 
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. image:: img/noneshallpass.jpg
+    :scale: 50%
+
+Exercise
+===============================
+
+.. container:: align-center
+
+    **sol/spam_filter.py** 
+
+.. raw:: pdf
+
+    Spacer 0 20
+
+.. image:: img/theblackknighttriumph.jpg
+    :scale: 45%
+
+
 Acknowledgements
 ===============================
 
