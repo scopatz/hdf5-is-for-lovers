@@ -44,6 +44,33 @@ What is the one thing that we do shamefully poorly as computational scientists?
     * Inspire you!
 
 
+Soapbox & Terminology
+==============================
+Much of scientific computing has the trappings of science in that 
+it is code produced to solve problems in Science. 
+
+.. break
+
+The process of writing science software is not 
+typically itself subject to the scientific method. (HARD!)
+
+.. break
+
+.. container:: align-center
+
+    *The current paradigm is* **periscientific computing,**
+    *where developers and scientists may be different people.*
+
+.. break
+
+.. container:: align-center
+
+    *Envision* **diacomputational science,**  *where computation is a substrate
+    for all science.*
+
+
+
+
 What is FLASH?
 ==============================
 FLASH code is a modular, parallel multiphysics simulation code for modeling
