@@ -1,0 +1,95 @@
+{"pageSetup": {
+    "width": "10in",
+    "height": "7.5in",
+    "margin-top": "2mm",
+    "margin-bottom": "0mm",
+    "margin-left": ".5cm",
+    "margin-right": "1cm",
+    "margin-gutter": "0cm",
+    "spacing-header": "2mm",
+    "spacing-footer": "0mm",
+    "firstTemplate": "cutePage"
+  },
+  "fontsAlias" : {"stdFont": "Times-Roman",
+                  "stdBold": "Times-Bold",
+                  "stdItalic": "Times-Italic",
+                  #"stdBoldItalic": "Times-Bold-Italic",
+                  "stdMono": "Courier"},
+  "styles": [["normal" , {
+                "fontName": "Times-Roman",
+                #"textColor": "#77181E",
+                "textColor": "#77181E",
+                "spaceAfter": 20,
+                "fontSize": 28}],
+             ["main-title" , {
+                "fontSize": 44,
+                "textColor": "#77181E",
+                "spaceBefore": 115,
+                "spaceAfter": 25,
+                "alignment":"center"
+                }],
+             ["main-names" , {
+                "fontSize": 24,
+                "textColor": "#808080",
+                "alignment":"center"
+                }],
+             ["gray-and-small", {"alignment":"left",
+                "textColor": "#808080",
+                #"spaceAfter": 20,
+                "fontSize": 16
+                }],
+             ["big-and-center", {"alignment":"center",
+                "textColor": "#77181E",
+                #"spaceAfter": 20,
+                "fontSize": 46
+                }],
+             ["small", {"alignment":"left",
+                "textColor": "#77181E",
+                "spaceAfter": 20,
+                "fontSize": 26
+                }],
+             ["font-size-24", {"alignment":"left",
+                "textColor": "#77181E",
+                "spaceAfter": 20,
+                "fontSize": 24
+                }],
+             ["warning", {"alignment":"center",
+                "fontName": "stdBold",
+                "textColor": "#FF0000",
+                "spaceAfter": 20,
+                "fontSize": 28
+                }],
+             ["align-left", {"alignment":"left",
+                "textColor": "#77181E",
+                "spaceAfter": 20,
+                "fontSize": 28
+                }],
+             ["align-center", {"alignment":"center",
+                "textColor": "#77181E",
+                "spaceAfter": 20,
+                "fontSize": 28
+                }],
+             ["heading" , {
+                "alignment":"center",
+                #"textColor": "#452F43",
+                "textColor": "white",
+                "spaceAfter": 35,
+                "fontSize": 22}],
+             ["bullet-list-item" , {
+                "parent": "bodytext",
+                "spaceBefore": 40
+                }]
+            ],
+  "pageTemplates" : {
+    "cutePage": {
+        "frames": [
+            ["0", "0", "100%", "100%"]
+        ],
+        "background" : "img/background.png",
+        "showHeader" : false,
+        # Toggle page numbers
+        showFooter" : true
+        #"showFooter" : false
+    }
+  }
+}
