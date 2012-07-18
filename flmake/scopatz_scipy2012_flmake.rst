@@ -122,7 +122,7 @@ To execute a FLASH simulation you must:
 
 What is ``flmake``?
 ===============================
-Unlike previous attempts, ``flmake`` is a CLI workflow managment tool 
+Unlike previous attempts, ``flmake`` is a CLI workflow management tool 
 for FLASH simulations whose *express goal* is reproducibility.
 
 .. break
@@ -280,7 +280,7 @@ This is akin to the bootstrapping problem.
 
 .. break
 
-This is acomplished though Python namespace
+This is accomplished though Python namespace
 slight-of-hand and relative imports.
 
 .. break
@@ -313,7 +313,7 @@ A weaker form of reproducibility is known as *replication*.
 
 .. break
 
-The boundry is fuzzy, but...
+The boundary is fuzzy, but...
 
 .. break
 
