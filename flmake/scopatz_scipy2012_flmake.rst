@@ -244,6 +244,52 @@ limitations:
     Reproduce Command Flowchart
 
 
+Meta-Version Control
+===============================
+To make reproduce work everywhere, ``flmake`` implements four
+version control abstractions:
+
+.. break
+
+    * info
+
+.. break
+
+    * checkout or clone
+
+.. break
+
+    * diff
+
+.. break 
+
+    * patch
+
+.. break 
+
+This is done for git, hg, svn, and release systems.
+
+Command Time Machine
+===============================
+The reproduce command execute historical versions of the 
+key commands as reincarnated by the meta-version control.
+
+.. break
+
+This is akin to the bootstrapping problem.
+
+.. break
+
+This is acomplished though Python namespace
+slight-of-hand and relative imports.
+
+.. break
+
+Historical versions of the ``flmake`` source are renamed.  
+This dir is then add/del from the front of ``sys.path``.
+Modules are then uniquely add/del in ``sys.modules``.
+
+
 
 Questions
 ===============================
