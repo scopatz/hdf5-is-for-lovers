@@ -290,6 +290,40 @@ This dir is then add/del from the front of ``sys.path``.
 Modules are then uniquely add/del in ``sys.modules``.
 
 
+Demo
+===============================
+.. raw:: pdf 
+
+    Spacer 0 30
+
+.. image:: img/dont_fail.jpg
+    :scale: 175%
+
+A Note on Replication
+===============================
+A weaker form of reproducibility is known as *replication*.
+
+.. break
+
+.. container:: align-center
+
+    *Replication is the process of recreating a result
+    when "you take all the same data and all the same tools" 
+    which were used in the original determination.*
+
+.. break
+
+The boundry is fuzzy, but...
+
+.. break
+
+While "the environment" is stored, ``flmake reproduce`` does
+not reinstantiate it. 
+
+.. break
+
+Thus this command is a reproducibility tool.
+
 
 Questions
 ===============================
