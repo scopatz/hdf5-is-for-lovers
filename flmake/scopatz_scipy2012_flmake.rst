@@ -119,6 +119,95 @@ To execute a FLASH simulation you must:
 
     * and run (flash binary).
 
+
+What is ``flmake``?
+===============================
+Unlike previous attempts, ``flmake`` is a CLI workflow managment tool 
+for FLASH simulations whose *express goal* is reproducibility.
+
+.. break
+
+Thus ``flmake`` replaces the existing manual ``setup``, ``build``, 
+and ``run`` system.
+
+.. break
+
+The ``flmake reproduce`` command can recreate prior
+runs from automatically captured metadata.
+
+.. break
+
+The strategies used here will work wherever the source code must be present for 
+the run (ie most Python code).
+
+
+Source & Project Dirs
+====================================
+* Without ``flmake``, FLASH must be setup and built from 
+  the FLASH source directory. 
+
+.. break
+
+* Sufficient for single runs; fails to separate projects
+  and simulation campaigns from the source code. 
+
+.. break
+
+* Makes version control difficult.
+
+.. break
+
+* Independent source and project directories where search PATHs
+  are defined for discovering code.
+
+
+Description Sidecar Files
+===============================
+For each command, a JSON file is written or modified which 
+stores the following metadata:
+
+.. break 
+
+.. container:: font-size-24
+
+    * the environment,
+
+.. break 
+
+    * version of project and source repositories,
+
+.. break 
+
+    * local source code modifications (diffs),
+
+.. break 
+
+    * run control files, run ids, and history,
+
+.. break 
+
+    * and FLASH binary modification times.
+
+Description Sidecar Files
+===============================
+.. code-block:: javascript
+
+    {"setup": {
+        "project_diff": "",
+        "source_diff": "",
+        "timestamp": 1341859081.58047,
+        "source_version": [
+          "git",
+          "bun",
+          "3ef5a92d600f0aa1ce26b7174de58089ce6cfa56"],
+        "command": ["/home/scopatz/.local/bin/flmake",
+          "setup", "-auto", "Sedov"],
+        "env": {...}
+        }
+    }
+
+
+
 Questions
 ===============================
 .. raw:: pdf 
