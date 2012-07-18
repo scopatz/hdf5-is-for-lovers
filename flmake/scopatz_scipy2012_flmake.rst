@@ -190,6 +190,10 @@ stores the following metadata:
 
 Description Sidecar Files
 ===============================
+.. raw:: pdf 
+
+    Spacer 0 10
+
 .. code-block:: javascript
 
     {"setup": {
@@ -205,6 +209,39 @@ Description Sidecar Files
         "env": {...}
         }
     }
+
+
+``flmake reproduce``
+===============================
+The ``reproduce`` command works by taking description files and 
+rerunning ``setup``, ``build``, and ``run``.  It has the following 
+limitations:
+
+.. break
+
+    * Project & Source dirs must be version controlled,
+
+.. break
+
+    * The FLASH run must depend on only the runtime
+      parameters file, the FLASH executable and datafiles,
+
+.. break
+
+    * and the FLASH executable must not be modified
+      between build and run steps.
+
+
+``flmake reproduce``
+===============================
+.. raw:: pdf 
+
+    Spacer 0 20
+
+.. figure:: img/reproduce_flowchart.png
+    :scale: 100%
+
+    Reproduce Command Flowchart
 
 
 
