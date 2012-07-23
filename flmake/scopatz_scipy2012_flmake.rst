@@ -92,6 +92,14 @@ terrestrial and astrophysical plasmas.  Features include:
 
     * Nuclear Burning
 
+What is FLASH?
+==============================
+.. raw:: pdf
+
+    Spacer 0 30
+
+.. image:: img/vulcan2012_plt_0986_run-a7d046ca_edens_1x_multi_slice.png
+    :scale: 90%
 
 FLASH Architecture
 ===============================
@@ -157,8 +165,8 @@ Source & Project Dirs
 
 .. break
 
-* Independent source and project directories where search PATHs
-  are defined for discovering code.
+* ``flmake`` has independent source and project directories which are 
+  searched for code Units.
 
 
 Description Sidecar Files
