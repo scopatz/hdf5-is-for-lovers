@@ -1,5 +1,5 @@
 #!/bin/bash
-PRESNAME="scopatz_scipy2012_hdf5"
+PRESNAME="hdf5-is-for-lovers"
 
 # save existing matplotlibrc
 if [ -f ${HOME}/.matplotlib/matplotlibrc -a ! -f ${HOME}/.matplotlib/matplotlibrc.presbak ]; then
