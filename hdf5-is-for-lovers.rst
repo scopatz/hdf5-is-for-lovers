@@ -1,24 +1,4 @@
-SciPy 2012 - Tutorials
-==============================
-
-.. container:: main-title
-
-    HDF 3.11 for Workgroups
-
-.. container:: main-names
-
-    July 16th, 2012, SciPy, Austin, TX
-
-    Anthony Scopatz 
-
-    The FLASH Center
-
-    The University of Chicago
-
-    scopatz@gmail.com
-
-
-SciPy 2012 - Tutorials
+PyConCa 2012 - Tutorials
 ==============================
 
 .. container:: main-title
@@ -27,7 +7,7 @@ SciPy 2012 - Tutorials
 
 .. container:: main-names
 
-    July 16th, 2012, SciPy, Austin, TX
+    November 10th, 2012, PyConCa, Toronto, Ontario
 
     Anthony Scopatz 
 
@@ -91,11 +71,8 @@ Feel free to:
 
 A Note on the Format
 =================================
-This tutorial was submitted to the *Advanced* track.
-
-.. break
-
-And this was slated to be *after* the IPython tutorial.  So...
+Allow me to recomend this tutorial with DWF's "Intro to Scientific Computing" 
+tutorial.  So...
 
 .. break
 
@@ -103,13 +80,40 @@ And this was slated to be *after* the IPython tutorial.  So...
 
     **Get the Program Committee!**
 
-.. image:: img/angry-mob.jpg
+.. image:: img/ycdg.png
     :align: center
     :scale: 250%
 
 .. container:: gray-and-small
 
-    ~please don't!
+    ~go to that one too! 
+    (img http://mayorgia.blogspot.ca/2012/03/and-then-i-ate-worlds-best-burrito.html) 
+
+Also
+==============================
+
+.. container:: align-center
+
+    Happy 10th Birthday, PyTables!
+
+.. image:: img/hbhk.png
+    :align: center
+    :scale: 100%
+
+Also Also
+==============================
+Continuum Analytics has a promotion right now for PyConCa for 25% off of the 
+professional version of Anaconda, their Python distribution.  
+
+.. break
+
+Go to https://store.continuum.io/cshop/anaconda and type "pycon-ca" at checkout.
+
+.. break
+
+It comes with HDF5 and PyTables (and h5py).
+
+
 
 Class Makeup
 ==============================
@@ -152,7 +156,7 @@ Please clone the repo:
 
 .. code-block:: bash
 
-    git clone git://github.com/scopatz/scipy2012.git
+    git clone git://github.com/scopatz/hdf5-is-for-lovers.git
 
 .. raw:: pdf
 
@@ -160,7 +164,7 @@ Please clone the repo:
 
 Or download a tarball from:
 
-    https://github.com/scopatz/scipy2012
+    https://github.com/scopatz/hdf5-is-for-lovers
 
 
 Warm up exercise
@@ -479,7 +483,7 @@ Suppose there is a big table of like-things:
 
 .. code-block:: python
 
-    # people:  name,            profession,   home
+    # people:  name,            profession,    home
     people = [('Arthur',        'King',        'Camelot'), 
               ('Lancelot',      'Knight',      'Lake'), 
               ('Bedevere',      'Knight',      'Wales'), 
