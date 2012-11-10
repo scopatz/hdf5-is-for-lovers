@@ -114,7 +114,6 @@ Go to https://store.continuum.io/cshop/anaconda and type "pycon-ca" at checkout.
 It comes with HDF5 and PyTables (and h5py).
 
 
-
 Class Makeup
 ==============================
 By a show of hands, how many people have used:
