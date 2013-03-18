@@ -1,4 +1,4 @@
-PyConCa 2012 - Tutorials
+PyData SV 2013 - Tutorials
 ==============================
 
 .. container:: main-title
@@ -7,7 +7,7 @@ PyConCa 2012 - Tutorials
 
 .. container:: main-names
 
-    November 10th, 2012, PyConCa, Toronto, Ontario
+    March 18th, 2013, PyData, Silicon Valley
 
     Anthony Scopatz 
 
@@ -68,51 +68,6 @@ Feel free to:
 
 * Ask questions at anytime 
 * Explore at your own pace.
-
-A Note on the Format
-=================================
-Allow me to recomend this tutorial with DWF's "Intro to Scientific Computing" 
-tutorial.  So...
-
-.. break
-
-.. container:: align-center
-
-    **Get the Program Committee!**
-
-.. image:: img/ycdg.png
-    :align: center
-    :scale: 250%
-
-.. container:: gray-and-small
-
-    ~go to that one too! 
-    (img http://mayorgia.blogspot.ca/2012/03/and-then-i-ate-worlds-best-burrito.html) 
-
-Also
-==============================
-
-.. container:: align-center
-
-    Happy 10th Birthday, PyTables!
-
-.. image:: img/hbhk.png
-    :align: center
-    :scale: 100%
-
-Also Also
-==============================
-Continuum Analytics has a promotion right now for PyConCa for 25% off of the 
-professional version of Anaconda, their Python distribution.  
-
-.. break
-
-Go to https://store.continuum.io/cshop/anaconda and type "pycon-ca" at checkout.
-
-.. break
-
-It comes with HDF5 and PyTables (and h5py).
-
 
 Class Makeup
 ==============================
