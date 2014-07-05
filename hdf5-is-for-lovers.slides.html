@@ -1715,7 +1715,7 @@ div.output_prompt {
 <h1 id="scipy-2014---tutorials">SciPy 2014 - Tutorials</h1>
 <div style="text-align:center;">
 <h2>
-HDF5 is for Lovers<img src="img/nerd_candy_heart.png" width="6%"/>
+HDF5 is for Lovers <img src="img/nerd_candy_heart.png" width="6%" align="middle"/>
 </h2>
 
 <p>July 6th, 2014, SciPy 2014</p>
@@ -1762,7 +1762,7 @@ scopatz@gmail.com
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is supported by the lovely people at <img src="img/hdf_logo.jpg" width="7%" />.</p>
+<p>It is supported by the lovely people at <img src="img/hdf_logo.jpg" width="7%" align="middle"/>.</p>
 </div>
 </div>
 </div>
@@ -3128,38 +3128,64 @@ H5Dwrite(data_set, desc, mem_space, data_hyperslab, H5P_DEFAULT, mat_data);</cod
 </div>
 </div>
 </div>
-    </div>
+    </div><div class="fragment">
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Extra metadata pointing to the location of the chunk in the file and in dataspace must be stored.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>By chunking, sparse data may be stored efficiently and datasets may extend infinitely in all dimensions.</p>
-<p>.. break</p>
-<p>.. container:: small</p>
-<pre><code>**Note:** Currently, PyTables only allows one extendable dim.</code></pre>
 </div>
 </div>
 </div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="color:grey;font-size:0.75em;">
+<strong>Note:</strong> Currently, PyTables only allows one extendable dim.
+</div>
+</div>
+</div>
+</div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="chunking">Chunking</h1>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 20</code></pre>
-<p>.. figure:: img/dset_contiguous.jpg</p>
-<pre><code>Contiguous Dataset</code></pre>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 50</code></pre>
-<p>.. figure:: img/dset_chunked.jpg</p>
-<pre><code>Chunked Dataset</code></pre>
+<div style="text-align:center;">
+<img src="img/dset_contiguous.jpg"/>
+</div>
+<p><br /><br /></p>
+<div style="text-align:center;">
+<img src="img/dset_chunked.jpg" />
 </div>
 </div>
 </div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3167,18 +3193,67 @@ H5Dwrite(data_set, desc, mem_space, data_hyperslab, H5P_DEFAULT, mat_data);</cod
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="chunking">Chunking</h1>
 <p>All I/O happens by chunk. This is important for:</p>
-<pre><code>* edge chunks may extend beyond the dataset</code></pre>
-<p>.. break</p>
-<pre><code>* default fill values are set in unallocated space</code></pre>
-<p>.. break</p>
-<pre><code>* reading and writing in parallel</code></pre>
-<p>.. break</p>
-<pre><code>* small chunks are good for accessing some of data</code></pre>
-<p>.. break</p>
-<pre><code>* large chunks are good for accessing lots of data</code></pre>
+<ul>
+<li>edge chunks may extend beyond the dataset</li>
+</ul>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>default fill values are set in unallocated space</li>
+</ul>
 </div>
 </div>
 </div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>reading and writing in parallel</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>small chunks are good for accessing some of data</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>large chunks are good for accessing lots of data</li>
+</ul>
+</div>
+</div>
+</div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3186,46 +3261,118 @@ H5Dwrite(data_set, desc, mem_space, data_hyperslab, H5P_DEFAULT, mat_data);</cod
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="chunking">Chunking</h1>
 <p>Any chunked dataset allows you to set the chunksize.</p>
-<p>.. code-block:: python</p>
-<pre><code>f.createTable(&#39;/&#39;, &#39;omnomnom&#39;, data, chunkshape=(42,42))</code></pre>
-<p>.. break</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre>    <span class="n">f</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="s">&#39;omnomnom&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">chunkshape</span><span class="o">=</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span><span class="mi">42</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_pyerr">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">AttributeError</span>                            Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-1-6b7546faa902&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>f<span class="ansiyellow">.</span>createTable<span class="ansiyellow">(</span><span class="ansiblue">&apos;/&apos;</span><span class="ansiyellow">,</span> <span class="ansiblue">&apos;omnomnom&apos;</span><span class="ansiyellow">,</span> data<span class="ansiyellow">,</span> chunkshape<span class="ansiyellow">=</span><span class="ansiyellow">(</span><span class="ansicyan">42</span><span class="ansiyellow">,</span><span class="ansicyan">42</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+
+<span class="ansired">AttributeError</span>: &apos;builtin_function_or_method&apos; object has no attribute &apos;createTable&apos;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>For example, a 4x4 chunked array could have a 3x3 chunksize.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>However, it could not have a 12x12 chunksize, since the ranks must be less than or equal to that of the array.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Manipulating the chunksize is a great way to fine-tune an application.</p>
 </div>
 </div>
 </div>
+    </div></section><section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="chunking">Chunking</h1>
-<p>.. figure:: img/dset_contiguous4x4.jpg</p>
-<pre><code>Contiguous 4x4 Dataset</code></pre>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 20</code></pre>
-<p>.. figure:: img/dset_chunked4x4.jpg</p>
-<pre><code>Chunked 4x4 Dataset</code></pre>
+<div style="text-align:center;">
+<img src="img/dset_contiguous4x4.jpg" />
+<h3>
+Contiguous 4x4 Dataset
+</h3></div>
+<br/><br/>
+<div style="text-align:center;">
+<img src="img/dset_chunked4x4.jpg" />
+<h3>
+Chunked 4x4 Dataset
+</h3></div>    
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="chunking">Chunking</h1>
-<p>Note that the addresses of chunks in dataspace (memory) has no bearing on their arrangement in the actual file.</p>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 40</code></pre>
-<p>.. figure:: img/dset_address_space.jpg</p>
-<pre><code>Dataspace (top) vs File (bottom) Chunk Locations</code></pre>
+Note that the addresses of chunks in dataspace (memory) has no bearing on their arrangement in the actual file. <br/><br/>
+<div style="text-align:center;">
+<img src="img/dset_address_space.jpg" />
+<h3>
+Dataspace (top) vs File (bottom) Chunk Locations
+</h3></div>    
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3233,19 +3380,60 @@ H5Dwrite(data_set, desc, mem_space, data_hyperslab, H5P_DEFAULT, mat_data);</cod
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="in-core-vs-out-of-core">In-Core vs Out-of-Core</h1>
 <p>Calculations depend on the current memory layout.</p>
-<p>.. break</p>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Recall access time analogy (wander Earth for 16 months).</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Definitions:</strong></p>
-<p>.. break</p>
-<pre><code>* Operations which require all data to be in memory are *in-core* and 
-  may be memory bound (NumPy).</code></pre>
-<p>.. break</p>
-<pre><code>* Operations where the dataset is external to memory are *out-of-core*
-  (or *in-kernel*) and may be CPU bound.</code></pre>
 </div>
 </div>
 </div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Operations which require all data to be in memory are <em>in-core</em> and may be memory bound (NumPy).</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Operations where the dataset is external to memory are <em>out-of-core</em> (or <em>in-kernel</em>) and may be CPU bound.</li>
+</ul>
+</div>
+</div>
+</div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3253,23 +3441,62 @@ H5Dwrite(data_set, desc, mem_space, data_hyperslab, H5P_DEFAULT, mat_data);</cod
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="in-core-operations">In-Core Operations</h1>
 <p>Say, <code>a</code> and <code>b</code> are arrays sitting in memory:</p>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 10</code></pre>
-<p>.. code-block:: python</p>
-<pre><code>a = np.array(...)
-b = np.array(...)
-c = 42 * a + 28 * b + 6</code></pre>
-<p>.. break</p>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 10</code></pre>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">42</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">28</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">6</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>The expression for <code>c</code> creates three temporary arrays!</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>For <code>N</code> operations, <code>N-1</code> temporaries are made.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Wastes memory and is slow. Pulling from disk is slower.</p>
 </div>
 </div>
 </div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3277,48 +3504,105 @@ c = 42 * a + 28 * b + 6</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="in-core-operations">In-Core Operations</h1>
 <p>A less memory intensive implementation would be an element-wise evaluation:</p>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 10</code></pre>
-<p>.. code-block:: python</p>
-<pre><code>c = np.empty(...)
-for i in range(len(c)):
-    c[i] = 42 * a[i] + 28 * b[i] + 6</code></pre>
-<p>.. break</p>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 10</code></pre>
-<p>.. container:: font-size-24</p>
-<pre><code>But if ``a`` and ``b`` were HDF5 arrays on disk, individual 
-element access time would kill you.  </code></pre>
-<p>.. break</p>
-<pre><code>Even with in memory NumPy arrays, there are problems with 
-gratuitous Python type checking. </code></pre>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)):</span>
+    <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span> <span class="o">*</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">28</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">6</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="color:grey;font-size:1.5em;">
+But if <code>a</code> and <code>b</code> were HDF5 arrays on disk, individual element access time would kill you.
+</div>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="color:grey;font-size:1.5em;">
+Even with in memory NumPy arrays, there are problems with gratuitous Python type checking.
+</div>
+</div>
+</div>
+</div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="out-of-core-operations">Out-of-Core Operations</h1>
-<p>.. container:: font-size-24</p>
-<pre><code>Say there was a virtual machine (or kernel) which could be 
-fed arrays and perform specified operations.</code></pre>
-<p>.. break</p>
-<pre><code>Giving this machine only chunks of data at a time, it 
-could function on infinite-length data using only finite 
-memory.</code></pre>
-<p>.. break</p>
-<p>.. code-block:: python</p>
-<pre><code>for i in range(0, len(a), 256):
-    r0, r1 = a[i:i+256], b[i:i+256]
-    multiply(r0, 42, r2)
-    multiply(r1, 28, r3)
-    add(r2, r3, r2); add(r2,  6, r2)
-    c[i:i+256] = r2</code></pre>
+<div style="color:grey;font-size:1.5em;">
+Say there was a virtual machine (or kernel) which could be fed arrays and perform specified operations.
 </div>
 </div>
 </div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="color:grey;font-size:1.5em;">
+Giving this machine only chunks of data at a time, it could function on infinite-length data using only finite memory.
+</div>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="mi">256</span><span class="p">):</span>
+    <span class="n">r0</span><span class="p">,</span> <span class="n">r1</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">256</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">256</span><span class="p">]</span>
+    <span class="n">multiply</span><span class="p">(</span><span class="n">r0</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="n">r2</span><span class="p">)</span>
+    <span class="n">multiply</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="n">r3</span><span class="p">)</span>
+    <span class="n">add</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="n">r3</span><span class="p">,</span> <span class="n">r2</span><span class="p">);</span> <span class="n">add</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span> <span class="n">r2</span><span class="p">)</span>
+    <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">256</span><span class="p">]</span> <span class="o">=</span> <span class="n">r2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3326,17 +3610,56 @@ memory.</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="out-of-core-operations">Out-of-Core Operations</h1>
 <p>This is the basic idea behind numexpr, which provides a general virtual machine for NumPy arrays.</p>
-<p>.. break</p>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>This problem lends itself nicely to parallelism.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Numexpr has low-level multithreading, avoiding the GIL.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>PyTables implements a <code>tb.Expr</code> class which backends to the numexpr VM but has additional optimizations for disk reading and writing.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>The full array need never be in memory.</p>
 </div>
 </div>
 </div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3344,26 +3667,40 @@ memory.</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="out-of-core-operations">Out-of-Core Operations</h1>
 <p>Fully out-of-core expression example:</p>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 10</code></pre>
-<p>.. code-block:: python</p>
-<pre><code>shape = (10, 10000)
-f = tb.openFile(&quot;/tmp/expression.h5&quot;, &quot;w&quot;)
-
-a = f.createCArray(f.root, &#39;a&#39;, tb.Float32Atom(dflt=1.), shape)
-b = f.createCArray(f.root, &#39;b&#39;, tb.Float32Atom(dflt=2.), shape)
-c = f.createCArray(f.root, &#39;c&#39;, tb.Float32Atom(dflt=3.), shape)
-out = f.createCArray(f.root, &#39;out&#39;, tb.Float32Atom(dflt=3.), shape)
-
-expr = tb.Expr(&quot;a*b+c&quot;)
-expr.setOutput(out)
-d = expr.eval()
-
-print &quot;returned--&gt;&quot;, repr(d)
-f.close()</code></pre>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">tb</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s">&quot;/tmp/expression.h5&quot;</span><span class="p">,</span> <span class="s">&quot;w&quot;</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">create_carray</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">tb</span><span class="o">.</span><span class="n">Float32Atom</span><span class="p">(</span><span class="n">dflt</span><span class="o">=</span><span class="mf">1.</span><span class="p">),</span> <span class="n">shape</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">create_carray</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">tb</span><span class="o">.</span><span class="n">Float32Atom</span><span class="p">(</span><span class="n">dflt</span><span class="o">=</span><span class="mf">2.</span><span class="p">),</span> <span class="n">shape</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">create_carray</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="n">tb</span><span class="o">.</span><span class="n">Float32Atom</span><span class="p">(</span><span class="n">dflt</span><span class="o">=</span><span class="mf">3.</span><span class="p">),</span> <span class="n">shape</span><span class="p">)</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">create_carray</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="s">&#39;out&#39;</span><span class="p">,</span> <span class="n">tb</span><span class="o">.</span><span class="n">Float32Atom</span><span class="p">(</span><span class="n">dflt</span><span class="o">=</span><span class="mf">3.</span><span class="p">),</span> <span class="n">shape</span><span class="p">)</span>
+
+<span class="n">expr</span> <span class="o">=</span> <span class="n">tb</span><span class="o">.</span><span class="n">Expr</span><span class="p">(</span><span class="s">&quot;a*b+c&quot;</span><span class="p">)</span>
+<span class="n">expr</span><span class="o">.</span><span class="n">set_output</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;returned--&gt;&quot;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3371,17 +3708,39 @@ f.close()</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="querying">Querying</h1>
 <p>The most common operation is asking an existing dataset whether its elements satisfy some criteria.<br />This is known as <em>querying</em>.</p>
-<p>.. break</p>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Because querying is so common PyTables defines special methods on Tables.</p>
-<p>.. break</p>
-<p>.. code-block:: python</p>
-<pre><code>tb.Table.where(cond)
-tb.Table.getWhereList(cond)
-tb.Table.readWhere(cond)
-tb.Table.whereAppend(dest, cond)</code></pre>
+<p>tb.Table.where(cond) tb.Table.get_where_list(cond) tb.Table.read_where(cond) tb.Table.where_append(dest, cond)</p>
 </div>
 </div>
 </div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Because querying is so common PyTables defines special methods on Tables.</p>
+<pre class="sourceCode python"><code class="sourceCode python">tb.Table.where(cond)
+tb.Table.get_where_list(cond)
+tb.Table.read_where(cond)
+tb.Table.where_append(dest, cond)</code></pre>
+</div>
+</div>
+</div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3389,16 +3748,36 @@ tb.Table.whereAppend(dest, cond)</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="querying">Querying</h1>
 <p>The conditions used in <code>where()</code> calls are strings which are evaluated by numexpr. These expressions must return boolean values.</p>
-<p>.. break</p>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>They are executed in the context of table itself combined with <code>locals()</code> and <code>globals()</code>.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>where()</code> method itself returns an iterator over all matched (hit) rows:</p>
-<p>.. code-block:: python</p>
-<pre><code>for row in table.where(&#39;(col1 &lt; 42) &amp; (col2 == col3)&#39;):
-    # do something with row</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> row in table.where(<span class="st">&#39;(col1 &lt; 42) &amp; (col2 == col3)&#39;</span>):
+    <span class="co"># do something with row</span></code></pre>
 </div>
 </div>
 </div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3406,41 +3785,76 @@ tb.Table.whereAppend(dest, cond)</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="querying">Querying</h1>
 <p>For a speed comparison, here is a complex query using regular Python:</p>
-<p>.. code-block:: python</p>
-<pre><code>result = [row[&#39;col2&#39;] for row in table if (
-          ((row[&#39;col4&#39;] &gt;= lim1 and row[&#39;col4&#39;] &lt; lim2) or
-          ((row[&#39;col2&#39;] &gt; lim3 and row[&#39;col2&#39;] &lt; lim4])) and
-          ((row[&#39;col1&#39;]+3.1*row[&#39;col2&#39;]+row[&#39;col3&#39;]*row[&#39;col4&#39;]) &gt; lim5)
-          )]</code></pre>
-<p>.. break</p>
+<pre class="sourceCode python"><code class="sourceCode python">result = [row[<span class="st">&#39;col2&#39;</span>] <span class="kw">for</span> row in table <span class="kw">if</span> (
+              ((row[<span class="st">&#39;col4&#39;</span>] &gt;= lim1 and row[<span class="st">&#39;col4&#39;</span>] &lt; lim2) or
+              ((row[<span class="st">&#39;col2&#39;</span>] &gt; lim3 and row[<span class="st">&#39;col2&#39;</span>] &lt; lim4])) and
+              ((row[<span class="st">&#39;col1&#39;</span>]+<span class="fl">3.1</span>*row[<span class="st">&#39;col2&#39;</span>]+row[<span class="st">&#39;col3&#39;</span>]*row[<span class="st">&#39;col4&#39;</span>]) &gt; lim5)
+              )]</code></pre>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>And this is the equivalent out-of-core search:</p>
-<p>.. code-block:: python</p>
-<pre><code>result = [row[&#39;col2&#39;] for row in table.where(
-            &#39;(((col4 &gt;= lim1) &amp; (col4 &lt; lim2)) | &#39;
-            &#39;((col2 &gt; lim3) &amp; (col2 &lt; lim4)) &amp;   &#39;
-            &#39;((col1+3.1*col2+col3*col4) &gt; lim5)) &#39;)]</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">result = [row[<span class="st">&#39;col2&#39;</span>] <span class="kw">for</span> row in table.where(
+             <span class="st">&#39;(((col4 &gt;= lim1) &amp; (col4 &lt; lim2)) | &#39;</span>
+             <span class="co">&#39;((col2 &gt; lim3) &amp; (col2 &lt; lim4)) &amp;   &#39;</span>
+             <span class="co">&#39;((col1+3.1*col2+col3*col4) &gt; lim5)) &#39;</span>)]</code></pre>
 </div>
 </div>
 </div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="querying">Querying</h1>
-<p>.. figure:: img/where_compare_10Mrow.png :scale: 77%</p>
-<pre><code>Complex query with 10 million rows. Data fits in memory.</code></pre>
+<div style="text-align:center;">
+<img src="img/where_compare_10Mrow.png" width="77%" />
+<h3>
+Complex query with 10 million rows. Data fits in memory.
+</h3></div>    
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="querying">Querying</h1>
-<p>.. figure:: img/where_compare_1Grow.png :scale: 77%</p>
-<pre><code>Complex query with 1 billion rows. Too big for memory.</code></pre>
+<div style="text-align:center;">
+<img src="img/where_compare_1Grow.png" width="77%" />
+<h3>
+Complex query with 1 billion rows. Too big for memory.
+</h3></div>
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="exercise">Exercise</h1>
+<p><strong>exer/crono.py</strong></p>
+<div style="text-align:center;">
+<img src="img/noneshallpass.jpg" width="50%" />
+</div>
 </div>
 </div>
 </div>
@@ -3450,28 +3864,16 @@ tb.Table.whereAppend(dest, cond)</code></pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="exercise">Exercise</h1>
-<p>.. container:: align-center</p>
-<pre><code>**exer/crono.py** </code></pre>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 20</code></pre>
-<p>.. image:: img/noneshallpass.jpg :scale: 50%</p>
+<p><strong>sol/crono.py</strong></p>
+<div style="text-align:center;">
+<img src="img/theblackknighttriumph.jpg" width="45%" />
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="exercise">Exercise</h1>
-<p>.. container:: align-center</p>
-<pre><code>**sol/crono.py** </code></pre>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 20</code></pre>
-<p>.. image:: img/theblackknighttriumph.jpg :scale: 45%</p>
-</div>
-</div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3479,15 +3881,45 @@ tb.Table.whereAppend(dest, cond)</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="compression">Compression</h1>
 <p>A more general way to solve the starving CPU problem is through <em>compression</em>.</p>
-<p>.. break</p>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Compression is when the dataset is piped through a zipping algorithm on write and the inverse unzipping algorithm on read.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Each chunk is compressed independently, so chunks end up with a varying number bytes.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Has some storage overhead, but may drastically reduce file sizes for very regular data.</p>
 </div>
 </div>
 </div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3495,15 +3927,45 @@ tb.Table.whereAppend(dest, cond)</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="compression">Compression</h1>
 <p>At first glance this is counter-intuitive. (<em>Why?</em>)</p>
-<p>.. break</p>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Compression/Decompression is clearly more CPU intensive than simply blitting an array into memory.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>However, because there is <em>less total information</em> to transfer, the time spent unpacking the array can be far less than moving the array around wholesale.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>This is kind of like power steering, you can either tell wheels how to turn manually or you can tell the car how you want the wheels turned.</p>
 </div>
 </div>
 </div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3511,18 +3973,52 @@ tb.Table.whereAppend(dest, cond)</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="compression">Compression</h1>
 <p>Compression is a guaranteed feature of HDF5 itself.</p>
-<p>.. break</p>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>At minimum, HDF5 requires zlib.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>The compression capabilities feature a plugin architecture which allow for a variety of different algorithms, including user defined ones!</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>PyTables supports:</p>
 <p>.. container:: align-center</p>
-<pre><code>|bullet| zlib (default), |bullet| lzo, |bullet| bzip2, and |bullet| blosc.</code></pre>
-<p>.. |bullet| unicode:: U+2022</p>
+<ul>
+<li>zlib (default)</li>
+<li>lzo</li>
+<li>bzip2</li>
+<li>blosc</li>
+</ul>
 </div>
 </div>
 </div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3530,27 +4026,51 @@ tb.Table.whereAppend(dest, cond)</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="compression">Compression</h1>
 <p>Compression is enabled in PyTables through <em>filters</em>.</p>
-<p>.. break</p>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 5</code></pre>
-<p>.. code-block:: python</p>
-<pre><code># complevel goes from [0,9]
-filters = tb.Filters(complevel=5, complib=&#39;blosc&#39;, ...)</code></pre>
-<p>.. break</p>
-<pre><code># filters may be set on the whole file,
-f = tb.openFile(&#39;/path/to/file&#39;, &#39;a&#39;, filters=filters)
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># complevel goes from [0,9]</span>
+filters = tb.Filters(complevel=<span class="dv">5</span>, complib=<span class="st">&#39;blosc&#39;</span>, ...)</code></pre>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># filters may be set on the whole file,</span>
+f = tb.open_file(<span class="st">&#39;/path/to/file&#39;</span>, <span class="st">&#39;a&#39;</span>, filters=filters)
 f.filters = filters</code></pre>
-<p>.. break</p>
-<pre><code># filters may also be set on most other nodes
-f.createTable(&#39;/&#39;, &#39;table&#39;, desc, filters=filters)
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># filters may also be set on most other nodes</span>
+f.create_table(<span class="st">&#39;/&#39;</span>, <span class="st">&#39;table&#39;</span>, desc, filters=filters)
 f.root.group._v_filters = filters</code></pre>
-<p>.. break</p>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 5</code></pre>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Filters only act on chunked datasets.</p>
 </div>
 </div>
 </div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3558,101 +4078,177 @@ f.root.group._v_filters = filters</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="compression">Compression</h1>
 <p>Tips for choosing compression parameters:</p>
-<p>.. break</p>
-<pre><code>* A mid-level (5) compression is sufficient. No need to go all the
-  way up (9).</code></pre>
-<p>.. break</p>
-<pre><code>* Use zlib if you must guarantee complete portability.</code></pre>
-<p>.. break</p>
-<pre><code>* Use blosc all other times.  It is optimized for HDF5.</code></pre>
-<p>.. break</p>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>A mid-level (5) compression is sufficient. No need to go all the way up (9).</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Use zlib if you must guarantee complete portability.</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Use blosc all other times. It is optimized for HDF5.</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><em>But why?</em> (I don't have time to go into the details of blosc. However here are some justifications...)</p>
 </div>
 </div>
 </div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="compression">Compression</h1>
-<p>.. figure:: img/compressed-recordsize-zlib.png</p>
-<pre><code>Comparison of different compression levels of zlib.</code></pre>
+<div style="text-align:center;">
+<img src="img/compressed-recordsize-zlib.png" width="70%" />
+<h3>
+Comparison of different compression levels of zlib.
+</h3></div>    
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="compression">Compression</h1>
-<p>.. figure:: img/create-chunksize-15GB.png :scale: 70%</p>
-<pre><code>Creation time per element for a 15 GB EArray and different chunksizes.</code></pre>
+<div style="text-align:center;">
+<img src="img/create-chunksize-15GB.png" width="70%" />
+<h3>
+Creation time per element for a 15 GB EArray and different chunksizes.
+</h3></div>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="compression">Compression</h1>
-<p>.. figure:: img/filesizes-chunksize-15GB.png :scale: 80%</p>
-<pre><code>File sizes for a 15 GB EArray and different chunksizes.</code></pre>
+<div style="text-align:center;">
+<img src="img/filesizes-chunksize-15GB.png" width="80%" />
+<h3>
+File sizes for a 15 GB EArray and different chunksizes.
+</h3></div>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="compression">Compression</h1>
-<p>.. figure:: img/seq-chunksize-15GB.png :scale: 70%</p>
-<pre><code>Sequential access time per element for a 15 GB EArray and different chunksizes.</code></pre>
+<div style="text-align:center;">
+<img src="img/seq-chunksize-15GB.png" width="70%" />
+<h3>
+Sequential access time per element for a 15 GB EArray and different chunksizes.
+</h3></div>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="compression">Compression</h1>
-<p>.. figure:: img/random-chunksize-15GB.png :scale: 70%</p>
-<pre><code>Random access time per element for a 15 GB EArray and different chunksizes.</code></pre>
+<div style="text-align:center;">
+<img src="img/random-chunksize-15GB.png" width="70%" />
+<h3>
+Random access time per element for a 15 GB EArray and different chunksizes.
+</h3></div>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="exercise">Exercise</h1>
-<p>.. container:: align-center</p>
-<pre><code>**exer/spam_filter.py** </code></pre>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 20</code></pre>
-<p>.. image:: img/noneshallpass.jpg :scale: 50%</p>
+<p><strong>exer/spam_filter.py</strong></p>
+<div style="text-align:center;">
+<img src="img/noneshallpass.jpg" width="50%" />
 </div>
 </div>
 </div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="exercise">Exercise</h1>
-<p>.. container:: align-center</p>
-<pre><code>**sol/spam_filter.py** </code></pre>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 20</code></pre>
-<p>.. image:: img/theblackknighttriumph.jpg :scale: 45%</p>
+<p><strong>sol/spam_filter.py</strong></p>
+<div style="text-align:center;">
+<img src="img/theblackknighttriumph.jpg" width="45%" />
 </div>
 </div>
 </div>
+</div><div class="fragment">
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3660,15 +4256,46 @@ f.root.group._v_filters = filters</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="other-python-data-structures">Other Python Data Structures</h1>
 <p>Overwhelmingly, numpy arrays have been the in-memory data structure of choice.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Using lists or tuples instead of arrays follows analogously.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>It is data structures like sets and dictionaries which do not quite map.</p>
-<p>.. break</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>However, as long as all elements may be cast into the same atomic type, these structures can be stored in HDF5 with relative ease.</p>
 </div>
 </div>
 </div>
+    </div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3676,50 +4303,75 @@ f.root.group._v_filters = filters</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="sets">Sets</h1>
 <p>Example of serializing and deserializing sets:</p>
-<p>.. code-block:: python</p>
-<pre><code>&gt;&gt;&gt; s = {1.0, 42, 77.7, 6E+01, True}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mf">77.7</span><span class="p">,</span> <span class="mf">6E+01</span><span class="p">,</span> <span class="bp">True</span><span class="p">}</span>
+<span class="n">f</span><span class="o">.</span><span class="n">createArray</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="s">&#39;s&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">s</span><span class="p">])</span>
+</pre></div>
 
-&gt;&gt;&gt; f.createArray(&#39;/&#39;, &#39;s&#39;, [float(x) for x in s])
-/s (Array(4,)) &#39;&#39;
-  atom := Float64Atom(shape=(), dflt=0.0)
-  maindim := 0
-  flavor := &#39;python&#39;
-  byteorder := &#39;little&#39;
-  chunkshape := None
+</div>
+</div>
+</div>
 
-&gt;&gt;&gt; set(f.root.s)
-set([1.0, 42.0, 77.7, 60.0])</code></pre>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="nb">set</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
+
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="exercise">Exercise</h1>
-<p>.. container:: align-center</p>
-<pre><code>**exer/dict_table.py** </code></pre>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 20</code></pre>
-<p>.. image:: img/noneshallpass.jpg :scale: 50%</p>
+<p><strong>exer/dict_table.py</strong></p>
+<div style="text-align:center;">
+<img src="img/noneshallpass.jpg" width="50%" />
 </div>
 </div>
 </div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="exercise">Exercise</h1>
-<p>.. container:: align-center</p>
-<pre><code>**sol/dict_table.py** </code></pre>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 20</code></pre>
-<p>.. image:: img/theblackknighttriumph.jpg :scale: 45%</p>
+<p><strong>sol/dict_table.py</strong></p>
+<div style="text-align:center;">
+<img src="img/theblackknighttriumph.jpg" width="45%" />
 </div>
 </div>
 </div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3737,40 +4389,6 @@ set([1.0, 42.0, 77.7, 60.0])</code></pre>
 </ul>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="acknowledgements">Acknowledgements</h1>
-<p>Many thanks to everyone who made this possible!</p>
-<p>.. break</p>
-<pre><code>* The HDF Group </code></pre>
-<p>.. break</p>
-<pre><code>* The PyTables Governance Team:</code></pre>
-<p>.. container:: align-center</p>
-<pre><code>|bullet| Josh Moore, |bullet| Antonio Valentino, |bullet| Josh Ayers </code></pre>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="acknowledgements">Acknowledgements</h1>
-<p>(Cont.)</p>
-<pre><code>* The NumPy Developers</code></pre>
-<p>.. break</p>
-<pre><code>* h5py, the symbiotic project</code></pre>
-<p>.. break</p>
-<pre><code>* Francesc Alted |nerd_candy_heart|</code></pre>
-<p>.. break</p>
-<p>.. container:: align-center</p>
-<pre><code>**Shameless Plug:** *We are always looking for more hands. Join Now!*</code></pre>
-</div>
-</div>
 </div></section>
     </section><section>
     <section>
@@ -3780,10 +4398,79 @@ set([1.0, 42.0, 77.7, 60.0])</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="acknowledgements">Acknowledgements</h1>
+<p>Many thanks to everyone who made this possible!</p>
+</div>
+</div>
+</div><div class="fragment">
+    
+                * The HDF Group 
+                
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The PyTables Developers</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The NumPy Developers</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>h5py, the symbiotic project</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="text-align:center;">
+<strong>Shameless Plug:</strong> <em>We are always looking for more hands. Join Now!</em>
+</div>
+</div>
+</div>
+</div>
+    </div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="questions">Questions</h1>
-<p>.. raw:: pdf</p>
-<pre><code>Spacer 0 50</code></pre>
-<p>.. image:: img/xkcd_bobby_tables.jpg :scale: 600%</p>
+<div style="text-align:center;">
+<img src="img/xkcd_bobby_tables.jpg" width="50%" />
+</div>
 </div>
 </div>
 </div><div style=display:none>
