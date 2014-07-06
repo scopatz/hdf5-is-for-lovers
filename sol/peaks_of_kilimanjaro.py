@@ -1,21 +1,25 @@
-"""Your brother is going on an expidition to build a bridge between the two
-peaks of Mount Kilimanjaro.  He needs you to create a database of information 
-about the team.  This needs to include:
 
-    1. A table of critical team member information.
+# coding: utf-8
 
-    2. An array of oxygen depravation fraction (to be filled in later)
-       for everyone team member for each of the million steps up the mountain.
+# **Your brother is going on an expidition to build a bridge between the two
+# peaks of Mount Kilimanjaro.  He needs you to create a database of information 
+# about the team.  This needs to include:**
+# 
+# I. A table of critical team member information.
+# 
+# II. An array of oxygen depravation fraction (to be filled in later)
+#     for everyone team member for each of the million steps up the mountain.
+# 
+# The info he has about the team is their first name, last name, age, and 
+# whether they are alive or not.
+# 
+# Suddenly, he has forgotten every other team member's name!  
+# 
+# III. Please read these off for him, but only if they are alive
+# 
+# Careful out there!
 
-The info he has about the team is their first name, last name, age, and 
-whether they are alive or not.
-
-Suddenly, he has forgotten every other team member's name!  
-
-    3. Please read these off for him, but only if they are alive
-
-Careful out there!
-"""
+# In[1]:
 
 import numpy as np
 import tables as tb
@@ -32,24 +36,33 @@ team = [('Flavia',   'Jacquin',   21, True),
         ('Eldridge', 'Lerow',     72, False),
         ]
 
-f = tb.openFile('expidition.h5', 'w')
+f = tb.open_file('expidition.h5', 'w')
+
+
+# In[2]:
 
 # 1.
 teamdt = np.dtype([('first', 'S10'), ('last', 'S10'), 
                    ('age', int), ('alive', bool)])
 team = np.array(team, dtype=teamdt)
-f.createTable('/', 'team', team)
+f.create_table('/', 'team', team)
+
+
+# In[3]:
 
 # 2.
 shape = (len(team), 1000000)
 o2dep = np.zeros(shape, float) 
-f.createArray('/', 'o2dep', o2dep, "help I can't breathe!")
+f.create_array('/', 'o2dep', o2dep, "help I can't breathe!")
 f.flush()
 
+
+# In[4]:
 
 # 3.
 for first, last, age, alive in f.root.team[::2]:
     if alive:
-        print first + " " + last
+        print(first, last)
 
 f.close()
+

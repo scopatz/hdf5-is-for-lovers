@@ -1,24 +1,29 @@
-"""Create a metric boatload of random people.  That's right, create a table of 
-1000 random people on boats.  
 
-1. Define the description.  This should include:
+# coding: utf-8
 
-    * First names
-    * Last names
-    * Lattitude and longitude, together
-    * List of ships which they have sailed on, min 1 but at most 5
-    * Lost at sea status
+# **Create a metric boatload of random people.  That's right, create a table of 
+# 1000 random people on boats.**
+# 
+# 1. Define the description.  This should include:
+# 
+#     * First names
+#     * Last names
+#     * Lattitude and longitude, together
+#     * List of ships which they have sailed on, min 1 but at most 5
+#     * Lost at sea status
+# 
+# 2. Use the rand_sailor function to write a table of all of these people.
+# 
+# 3. Resuce patrols are dispatched by quarter.  Using the lattitude and 
+#    longitude, create groups representing the NE, NW, SE, and SW and place
+#    smaller tables of just these sailors.
+# 
+# 4. Rescue patrols also need up to date information on whether a not 
+#    a person is lost.  Create two tables (lost & found) in each of the 
+#    four directions which approriately elliminate the lost-at-sea status.
 
-2. Use the rand_sailor function to write a table of all of these people.
+# In[1]:
 
-3. Resuce patrols are dispatched by quarter.  Using the lattitude and 
-   longitude, create groups representing the NE, NW, SE, and SW and place
-   smaller tables of just these sailors.
-
-4. Rescue patrols also need up to date information on whether a not 
-   a person is lost.  Create two tables (lost & found) in each of the 
-   four directions which approriately elliminate the lost-at-sea status.
-"""
 import random
 import numpy as np
 import tables as tb
@@ -40,15 +45,18 @@ def rand_sailor():
     lost = bool(np.random.random_integers(0,1))
     return first, last, lat_long, ships, lost
 
-f = tb.openFile('boatload.h5', 'a')
+f = tb.open_file('boatload.h5', 'w')
 
-# 1. Define the description.  This should include:
-#
-#    * First names
-#    * Last names
-#    * Lattitude and longitude, together
-#    * List of ships which they have sailed on, min 1 but at most 5
-#    * Lost at sea status
+
+# **1. Define the description.  This should include:**
+# 
+# - First names
+# - Last names
+# - Lattitude and longitude, together
+# - List of ships which they have sailed on, min 1 but at most 5
+# - Lost at sea status
+
+# In[2]:
 
 max_first_len = max([len(x) for x in first_names])
 max_last_len = max([len(x) for x in last_names])
@@ -65,7 +73,10 @@ desc = np.dtype([('first', 'S' + str(max_first_len)),
                 ])
 
 
-# 2. Use the rand_sailor function to write a table of all of these people.
+# **2. Use the rand_sailor function to write a table of all of these people.**
+
+# In[3]:
+
 raw_sailors = []
 for i in range(1000):
     first, last, lat_long, ships, lost = rand_sailor()
@@ -73,12 +84,15 @@ for i in range(1000):
     raw_sailors.append((first, last, lat_long, ships, lost))
 sailors = np.array(raw_sailors, dtype=desc)
 
-f.createTable('/', 'sailors', sailors)
+f.create_table('/', 'sailors', sailors)
 
 
-# 3. Resuce patrols are dispatched by quarter.  Using the lattitude and 
-#    longitude, create groups representing the NE, NW, SE, and SW and place
-#    smaller tables of just these sailors.
+# **3. Resuce patrols are dispatched by quarter.  Using the lattitude and 
+# longitude, create groups representing the NE, NW, SE, and SW and place
+# smaller tables of just these sailors.**
+
+# In[4]:
+
 quads = {'NE': [(0.0, 90.0), (0.0, 180.0)],
          'NW': [(0.0, 90.0), (-180.0, 0.0)],
          'SE': [(-90.0, 0.0), (0.0, 180.0)],
@@ -86,25 +100,28 @@ quads = {'NE': [(0.0, 90.0), (0.0, 180.0)],
         }
 
 for quad in quads:
-    f.createGroup('/', quad)
+    f.create_group('/', quad)
     lower_lat_mask = quads[quad][0][0] < sailors['location']['lat']
     upper_lat_mask = quads[quad][0][1] > sailors['location']['lat']
     lower_long_mask = quads[quad][1][0] < sailors['location']['long']
     upper_long_mask = quads[quad][1][1] > sailors['location']['long']
     mask = lower_lat_mask & upper_lat_mask & lower_long_mask & upper_long_mask
-    f.createTable('/' + quad, 'sailors', sailors[mask])
-
-# 4. Rescue patrols also need up to date information on whether a not 
-#    a person is lost.  Create two tables (lost & found) in each of the 
-#    four directions which approriately elliminate the lost-at-sea status.
-
+    f.create_table('/' + quad, 'sailors', sailors[mask])
+    
+    # 4. Rescue patrols also need up to date information on whether a not 
+    #    a person is lost.  Create two tables (lost & found) in each of the 
+    #    four directions which approriately elliminate the lost-at-sea status.
     lost_mask = mask & sailors['lost']
     lost_sailors = sailors[lost_mask][['first', 'last', 'location', 'ships']]
-    f.createTable('/' + quad, 'lost', lost_sailors)
+    f.create_table('/' + quad, 'lost', lost_sailors)
 
     found_mask = mask & ~sailors['lost']
     found_sailors = sailors[found_mask][['first', 'last', 'location', 'ships']]
-    f.createTable('/' + quad, 'found', found_sailors)
+    f.create_table('/' + quad, 'found', found_sailors)
+
+
+# In[5]:
 
 # Remember to always close the file!
 f.close()
+
