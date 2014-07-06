@@ -1715,9 +1715,13 @@ div.output_prompt {
 <h1 id="scipy-2014---tutorials">SciPy 2014 - Tutorials</h1>
 <div style="text-align:center;">
 <h2>
-HDF5 is for Lovers <img src="img/nerd_candy_heart.png" width="6%" align="middle"/>
+HDF5 is for Lovers
 </h2>
-
+</div>
+<div style="text-align:center;">
+<img src="img/nerd_candy_heart.png" width="6%" align="middle"/>
+</div>
+<div style="text-align:center;">
 <p>July 6th, 2014, SciPy 2014</p>
 <p>Anthony Scopatz</p>
 <p>Engineering Physics Dept., The University ot Wisconsin-Madison</p>
@@ -1742,6 +1746,23 @@ scopatz@gmail.com
 </div>
 </div>
 </div>
+    </div><div style=display:none>
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="o">!</span>rm db.h5 temp.h5
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
     </div></section>
     </section><section>
     <section>
@@ -1762,7 +1783,7 @@ scopatz@gmail.com
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is supported by the lovely people at <img src="img/hdf_logo.jpg" width="7%" align="middle"/>.</p>
+<p>It is supported by the lovely people at HDFGroup.</p>
 </div>
 </div>
 </div>
@@ -1947,7 +1968,7 @@ scopatz@gmail.com
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[2]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -1985,7 +2006,7 @@ In&nbsp;[]:
 <h1 id="warm-up-exercise">Warm up exercise</h1>
 <p>You should see in ViTables:</p>
 <div style="text-align:center;">
-<img src="img/warmup.png" width="35%" />
+<img src="img/warmup.png" width="70%" />
 </div>
 </div>
 </div>
@@ -2327,10 +2348,7 @@ In&nbsp;[]:
 </div>
 </div>
 </div>
-    </div></section>
-    </section><section>
-    <section>
-    
+    </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2343,12 +2361,12 @@ In&nbsp;[]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[3]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">tables</span> <span class="kn">as</span> <span class="nn">tb</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">tb</span><span class="o">.</span><span class="n">openFile</span><span class="p">(</span><span class="s">&#39;/path/to/file&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">tb</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s">&#39;db.h5&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2391,7 +2409,7 @@ In&nbsp;[]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In PyTables, you may access nodes as attributes on a Python object (<code>f.root.a_group.some_data</code>).</p>
+<p>In PyTables, you may access nodes as attributes on a Python object, namely <code>f.root.a_group.some_data</code>.</p>
 </div>
 </div>
 </div>
@@ -2422,7 +2440,7 @@ In&nbsp;[]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[4]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2431,6 +2449,26 @@ In&nbsp;[]:
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[4]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+/a_group (Group) &apos;My Group&apos;
+  children := []
+</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -2459,11 +2497,12 @@ In&nbsp;[]:
 </div>
 </div>
 </div>
-    </div>
+    </div><div class="fragment">
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[5]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2475,12 +2514,37 @@ In&nbsp;[]:
 </div>
 </div>
 
-</div><div class="fragment">
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[5]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+/a_group/arthur_count (Array(4,)) &apos;&apos;
+  atom := Int64Atom(shape=(), dflt=0)
+  maindim := 0
+  flavor := &apos;python&apos;
+  byteorder := &apos;little&apos;
+  chunkshape := None
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[6]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2514,7 +2578,7 @@ In&nbsp;[]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[7]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2525,13 +2589,32 @@ In&nbsp;[]:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[7]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+[1, 2, 5, 3]
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div><div class="fragment">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[8]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2542,13 +2625,32 @@ In&nbsp;[]:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[8]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+list
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div><div class="fragment">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[9]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2556,6 +2658,25 @@ In&nbsp;[]:
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[9]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+tables.array.Array
+</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -2578,7 +2699,7 @@ In&nbsp;[]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[10]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2589,13 +2710,32 @@ In&nbsp;[]:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[10]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+(12, b&apos;Bedivere&apos;)
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div><div class="fragment">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[11]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2606,13 +2746,33 @@ In&nbsp;[]:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[11]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+array([(42, b&apos;Lancelot&apos;)], 
+      dtype=[(&apos;id&apos;, &apos;&lt;i8&apos;), (&apos;name&apos;, &apos;S10&apos;)])
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div><div class="fragment">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[12]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2624,13 +2784,33 @@ In&nbsp;[]:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[12]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+array([(12, b&apos;Bedivere&apos;)], 
+      dtype=[(&apos;id&apos;, &apos;&lt;i8&apos;), (&apos;name&apos;, &apos;S10&apos;)])
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div><div class="fragment">
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[13]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2638,6 +2818,26 @@ In&nbsp;[]:
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[13]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+array([(12, b&apos;Bedivere&apos;), (42, b&apos;Lancelot&apos;)], 
+      dtype=[(&apos;id&apos;, &apos;&lt;i8&apos;), (&apos;name&apos;, &apos;S10&apos;)])
+</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -2663,7 +2863,10 @@ In&nbsp;[]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="exercise">Exercise</h1>
-<p><strong>exer/peaks_of_kilimanjaro.py</strong></p>
+<h3>
+exer/peaks_of_kilimanjaro.py
+</h3>
+
 <div style="text-align:center;">
 <img src="img/noneshallpass.jpg" width="50%" />
 </div>
@@ -2679,7 +2882,10 @@ In&nbsp;[]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="exercise">Exercise</h1>
-<p><strong>sol/peaks_of_kilimanjaro.py</strong></p>
+<h3>
+sol/peaks_of_kilimanjaro.py
+</h3>
+
 <div style="text-align:center;">
 <img src="img/theblackknighttriumph.jpg" width="45%" />
 </div>
@@ -2968,33 +3174,19 @@ Francesc Alted. 2010. Why Modern CPUs Are Starving and What Can Be Done about It
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="tables">Tables</h1>
 <p>Data types may be nested (though they are stored in flattened way).</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[]:
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class="highlight"><pre><span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">([(</span><span class="s">&#39;id&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span> 
-               <span class="p">(</span><span class="s">&#39;first&#39;</span><span class="p">,</span> <span class="s">&#39;S5&#39;</span><span class="p">),</span>
-               <span class="p">(</span><span class="s">&#39;last&#39;</span><span class="p">,</span>  <span class="s">&#39;S5&#39;</span><span class="p">),</span>
-               <span class="p">(</span><span class="s">&#39;parents&#39;</span><span class="p">,</span> <span class="p">[</span>
-                    <span class="p">(</span><span class="s">&#39;mom_id&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span>
-                    <span class="p">(</span><span class="s">&#39;dad_id&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span>
-                <span class="p">]),</span>
-            <span class="p">])</span>
+<pre class="sourceCode python"><code class="sourceCode python">dt = np.dtype([(<span class="st">&#39;id&#39;</span>, <span class="dt">int</span>), 
+               (<span class="st">&#39;first&#39;</span>, <span class="st">&#39;S5&#39;</span>),
+               (<span class="st">&#39;last&#39;</span>,  <span class="st">&#39;S5&#39;</span>),
+               (<span class="st">&#39;parents&#39;</span>, [
+                    (<span class="st">&#39;mom_id&#39;</span>, <span class="dt">int</span>),
+                    (<span class="st">&#39;dad_id&#39;</span>, <span class="dt">int</span>),
+                ]),
+            ])
 
-<span class="n">people</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">bytes</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">itemsize</span> <span class="o">*</span> <span class="mi">10000</span><span class="p">),</span> <span class="n">dt</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="s">&#39;random_peeps&#39;</span><span class="p">,</span> <span class="n">people</span><span class="p">)</span>
-</pre></div>
-
+people = np.fromstring(np.random.<span class="dt">bytes</span>(dt.itemsize * <span class="dv">10000</span>), dt)
+f.create_table(<span class="st">&#39;/&#39;</span>, <span class="st">&#39;random_peeps&#39;</span>, people)</code></pre>
 </div>
 </div>
-</div>
-
 </div></section>
     </section><section>
     <section>
@@ -3006,7 +3198,7 @@ In&nbsp;[]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="tables">Tables</h1>
 <div style="text-align:center;">
-<img src="img/random_peeps.png" width="40%" />
+<img src="img/random_peeps.png" width="70%" />
 </div>
 </div>
 </div>
@@ -3049,11 +3241,7 @@ In&nbsp;[]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="tables">Tables</h1>
-<pre><code>typedef struct mat {
-  double mass;
-  int atoms_per_mol;
-  double comp [];
-} mat;
+<pre><code>// use mat struct from before
 
 size_t mat_size = sizeof(mat) + sizeof(double)*comp_size;
 hid_t desc = H5Tcreate(H5T_COMPOUND, mat_size);
@@ -3073,14 +3261,20 @@ mat * mat_data  = new mat[mat_size];
 H5Dwrite(data_set, desc, mem_space, data_hyperslab, H5P_DEFAULT, mat_data);</code></pre>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="exercise">Exercise</h1>
-<p><strong>exer/boatload.py</strong></p>
+<h3>
+exer/boatload.py
+</h3>
+
 <div style="text-align:center;">
 <img src="img/noneshallpass.jpg" width="50%" />
 </div>
@@ -3096,7 +3290,10 @@ H5Dwrite(data_set, desc, mem_space, data_hyperslab, H5P_DEFAULT, mat_data);</cod
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="exercise">Exercise</h1>
-<p><strong>sol/boatload.py</strong></p>
+<h3>
+sol/boatload.py
+</h3>
+
 <div style="text-align:center;">
 <img src="img/theblackknighttriumph.jpg" width="45%" />
 </div>
@@ -3174,11 +3371,11 @@ H5Dwrite(data_set, desc, mem_space, data_hyperslab, H5P_DEFAULT, mat_data);</cod
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="chunking">Chunking</h1>
 <div style="text-align:center;">
-<img src="img/dset_contiguous.jpg"/>
+<img src="img/dset_contiguous.jpg" width="30%"/>
 </div>
 <p><br /><br /></p>
 <div style="text-align:center;">
-<img src="img/dset_chunked.jpg" />
+<img src="img/dset_chunked.jpg" width="30%" />
 </div>
 </div>
 </div>
@@ -3261,42 +3458,9 @@ H5Dwrite(data_set, desc, mem_space, data_hyperslab, H5P_DEFAULT, mat_data);</cod
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="chunking">Chunking</h1>
 <p>Any chunked dataset allows you to set the chunksize.</p>
+<pre class="sourceCode python"><code class="sourceCode python">f.create_table(<span class="st">&#39;/&#39;</span>, <span class="st">&#39;omnomnom&#39;</span>, data, chunkshape=(<span class="dv">42</span>,<span class="dv">42</span>))</code></pre>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[1]:
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class="highlight"><pre>    <span class="n">f</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="s">&#39;omnomnom&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">chunkshape</span><span class="o">=</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span><span class="mi">42</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_pyerr">
-<pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-1-6b7546faa902&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>f<span class="ansiyellow">.</span>createTable<span class="ansiyellow">(</span><span class="ansiblue">&apos;/&apos;</span><span class="ansiyellow">,</span> <span class="ansiblue">&apos;omnomnom&apos;</span><span class="ansiyellow">,</span> data<span class="ansiyellow">,</span> chunkshape<span class="ansiyellow">=</span><span class="ansiyellow">(</span><span class="ansicyan">42</span><span class="ansiyellow">,</span><span class="ansicyan">42</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-
-<span class="ansired">AttributeError</span>: &apos;builtin_function_or_method&apos; object has no attribute &apos;createTable&apos;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div><div class="fragment">
     
 <div class="cell border-box-sizing text_cell rendered">
@@ -3330,7 +3494,9 @@ In&nbsp;[1]:
 </div>
 </div>
 </div>
-    </div></section><section>
+    </div></section>
+    </section><section>
+    <section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -3363,7 +3529,7 @@ Chunked 4x4 Dataset
 <h1 id="chunking">Chunking</h1>
 Note that the addresses of chunks in dataspace (memory) has no bearing on their arrangement in the actual file. <br/><br/>
 <div style="text-align:center;">
-<img src="img/dset_address_space.jpg" />
+<img src="img/dset_address_space.jpg" width="100%" />
 <h3>
 Dataspace (top) vs File (bottom) Chunk Locations
 </h3></div>    
@@ -3441,25 +3607,11 @@ Dataspace (top) vs File (bottom) Chunk Locations
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="in-core-operations">In-Core Operations</h1>
 <p>Say, <code>a</code> and <code>b</code> are arrays sitting in memory:</p>
+<pre class="sourceCode python"><code class="sourceCode python">a = np.array(...)
+b = np.array(...)
+c = <span class="dv">42</span> * a + <span class="dv">28</span> * b + <span class="dv">6</span></code></pre>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[]:
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">42</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">28</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">6</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div><div class="fragment">
     
 <div class="cell border-box-sizing text_cell rendered">
@@ -3504,25 +3656,11 @@ In&nbsp;[]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="in-core-operations">In-Core Operations</h1>
 <p>A less memory intensive implementation would be an element-wise evaluation:</p>
+<pre class="sourceCode python"><code class="sourceCode python">c = np.empty(...)
+<span class="kw">for</span> i in <span class="dt">range</span>(<span class="dt">len</span>(c)):
+    c[i] = <span class="dv">42</span> * a[i] + <span class="dv">28</span> * b[i] + <span class="dv">6</span></code></pre>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[]:
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class="highlight"><pre><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)):</span>
-    <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span> <span class="o">*</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">28</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">6</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div><div class="fragment">
     
 <div class="cell border-box-sizing text_cell rendered">
@@ -3530,7 +3668,7 @@ In&nbsp;[]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div style="color:grey;font-size:1.5em;">
+<div style="font-size:1.5em;">
 But if <code>a</code> and <code>b</code> were HDF5 arrays on disk, individual element access time would kill you.
 </div>
 </div>
@@ -3543,7 +3681,7 @@ But if <code>a</code> and <code>b</code> were HDF5 arrays on disk, individual el
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div style="color:grey;font-size:1.5em;">
+<div style="font-size:1.5em;">
 Even with in memory NumPy arrays, there are problems with gratuitous Python type checking.
 </div>
 </div>
@@ -3559,7 +3697,7 @@ Even with in memory NumPy arrays, there are problems with gratuitous Python type
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="out-of-core-operations">Out-of-Core Operations</h1>
-<div style="color:grey;font-size:1.5em;">
+<div style="font-size:1.5em;">
 Say there was a virtual machine (or kernel) which could be fed arrays and perform specified operations.
 </div>
 </div>
@@ -3571,7 +3709,7 @@ Say there was a virtual machine (or kernel) which could be fed arrays and perfor
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div style="color:grey;font-size:1.5em;">
+<div style="font-size:1.5em;">
 Giving this machine only chunks of data at a time, it could function on infinite-length data using only finite memory.
 </div>
 </div>
@@ -3579,25 +3717,19 @@ Giving this machine only chunks of data at a time, it could function on infinite
 </div>
     </div><div class="fragment">
     
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
+<div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
-In&nbsp;[]:
 </div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="mi">256</span><span class="p">):</span>
-    <span class="n">r0</span><span class="p">,</span> <span class="n">r1</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">256</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">256</span><span class="p">]</span>
-    <span class="n">multiply</span><span class="p">(</span><span class="n">r0</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="n">r2</span><span class="p">)</span>
-    <span class="n">multiply</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="n">r3</span><span class="p">)</span>
-    <span class="n">add</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="n">r3</span><span class="p">,</span> <span class="n">r2</span><span class="p">);</span> <span class="n">add</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span> <span class="n">r2</span><span class="p">)</span>
-    <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">256</span><span class="p">]</span> <span class="o">=</span> <span class="n">r2</span>
-</pre></div>
-
+<div class="text_cell_render border-box-sizing rendered_html">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">0</span>, <span class="dt">len</span>(a), <span class="dv">256</span>):
+    r0, r1 = a[i:i<span class="dv">+256</span>], b[i:i<span class="dv">+256</span>]
+    multiply(r0, <span class="dv">42</span>, r2)
+    multiply(r1, <span class="dv">28</span>, r3)
+    add(r2, r3, r2); add(r2,  <span class="dv">6</span>, r2)
+    c[i:i<span class="dv">+256</span>] = r2</code></pre>
 </div>
 </div>
-</div>
-
 </div>
     </div></section>
     </section><section>
@@ -3673,7 +3805,7 @@ In&nbsp;[]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[14]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3690,10 +3822,30 @@ In&nbsp;[]:
 <span class="n">d</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;returned--&gt;&quot;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
-<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+returned--&gt; /out (CArray(10, 10000)) &apos;&apos;
+  atom := Float32Atom(shape=(), dflt=3.0)
+  maindim := 0
+  flavor := &apos;numpy&apos;
+  byteorder := &apos;little&apos;
+  chunkshape := (1, 10000)
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -3711,18 +3863,6 @@ In&nbsp;[]:
 </div>
 </div>
 </div><div class="fragment">
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Because querying is so common PyTables defines special methods on Tables.</p>
-<p>tb.Table.where(cond) tb.Table.get_where_list(cond) tb.Table.read_where(cond) tb.Table.where_append(dest, cond)</p>
-</div>
-</div>
-</div>
-    </div><div class="fragment">
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -3851,20 +3991,29 @@ Complex query with 1 billion rows. Too big for memory.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="exercise">Exercise</h1>
-<p><strong>exer/crono.py</strong></p>
+<h3>
+exer/crono.py
+</h3>
+
 <div style="text-align:center;">
 <img src="img/noneshallpass.jpg" width="50%" />
 </div>
 </div>
 </div>
-</div>
+</div></section>
+    </section><section>
+    <section>
+    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="exercise">Exercise</h1>
-<p><strong>sol/crono.py</strong></p>
+<h3>
+sol/crono.py
+</h3>
+
 <div style="text-align:center;">
 <img src="img/theblackknighttriumph.jpg" width="45%" />
 </div>
@@ -4225,7 +4374,10 @@ Random access time per element for a 15 GB EArray and different chunksizes.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="exercise">Exercise</h1>
-<p><strong>exer/spam_filter.py</strong></p>
+<h3>
+exer/spam_filter.py
+</h3> 
+
 <div style="text-align:center;">
 <img src="img/noneshallpass.jpg" width="50%" />
 </div>
@@ -4241,13 +4393,18 @@ Random access time per element for a 15 GB EArray and different chunksizes.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="exercise">Exercise</h1>
-<p><strong>sol/spam_filter.py</strong></p>
+<h3>
+sol/spam_filter.py
+</h3>
+
 <div style="text-align:center;">
 <img src="img/theblackknighttriumph.jpg" width="45%" />
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div></section>
+    </section><section>
+    <section>
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -4258,8 +4415,7 @@ Random access time per element for a 15 GB EArray and different chunksizes.
 <p>Overwhelmingly, numpy arrays have been the in-memory data structure of choice.</p>
 </div>
 </div>
-</div>
-    </div><div class="fragment">
+</div><div class="fragment">
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -4305,27 +4461,54 @@ Random access time per element for a 15 GB EArray and different chunksizes.
 <p>Example of serializing and deserializing sets:</p>
 </div>
 </div>
-</div>
+</div><div class="fragment">
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[15]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mf">77.7</span><span class="p">,</span> <span class="mf">6E+01</span><span class="p">,</span> <span class="bp">True</span><span class="p">}</span>
-<span class="n">f</span><span class="o">.</span><span class="n">createArray</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="s">&#39;s&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">s</span><span class="p">])</span>
+<div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mf">77.7</span><span class="p">,</span> <span class="mf">6E+1</span><span class="p">,</span> <span class="bp">True</span><span class="p">}</span>
+<span class="n">f</span><span class="o">.</span><span class="n">create_array</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="s">&#39;s&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">s</span><span class="p">])</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[15]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+/s (Array(4,)) &apos;&apos;
+  atom := Float64Atom(shape=(), dflt=0.0)
+  maindim := 0
+  flavor := &apos;python&apos;
+  byteorder := &apos;little&apos;
+  chunkshape := None
+</pre>
 </div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[16]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4336,7 +4519,27 @@ In&nbsp;[]:
 </div>
 </div>
 
-</div></section>
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[16]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+{1.0, 42.0, 60.0, 77.7}
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section>
     </section><section>
     <section>
     
@@ -4402,11 +4605,18 @@ In&nbsp;[]:
 <p>Many thanks to everyone who made this possible!</p>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The HDF Group</li>
+</ul>
+</div>
+</div>
 </div><div class="fragment">
-    
-                * The HDF Group 
-                
-    </div><div class="fragment">
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -4478,7 +4688,7 @@ In&nbsp;[]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[2]:
+In&nbsp;[17]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4496,10 +4706,6 @@ In&nbsp;[2]:
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-#cp -r /reveal . 
-#rm -rf reveal/.git* 
-#mkdir -p js 
-#cp /js/mathjax-onload.js js
 ipython nbconvert --to slides hdf5-is-for-lovers.ipynb 
 [NbConvertApp] Using existing profile dir: &apos;/home/scopatz/.ipython/profile_default&apos;
 [NbConvertApp] Converting notebook hdf5-is-for-lovers.ipynb to slides
@@ -4508,13 +4714,12 @@ ipython nbconvert --to slides hdf5-is-for-lovers.ipynb
 /home/scopatz/.local/lib/python3.4/site-packages/IPython/nbconvert/filters/markdown.py:78: UserWarning: Node.js 0.9.12 or later wasn&apos;t found.
 Nbconvert will try to use Pandoc instead.
   &quot;Nbconvert will try to use Pandoc instead.&quot;)
-[NbConvertApp] Writing 234786 bytes to hdf5-is-for-lovers.slides.html
+[NbConvertApp] Writing 281284 bytes to hdf5-is-for-lovers.slides.html
 cp classy.css reveal.js/css/theme/ 
 sed -i &apos;s:reveal.js/css/theme/classy.css:reveal.js/css/theme/classy.css:&apos; hdf5-is-for-lovers.slides.html 
 sed -i &apos;s:class=&quot;fragment&quot; class=&quot;text_cell_render:class=&quot;fragment text_cell_render:&apos; hdf5-is-for-lovers.slides.html 
 sed -i &apos;s/.rendered_html ul{list-style:disc;margin:0em 2em;}/.rendered_html ul{list-style:disc;margin:0em 2em;}/&apos; hdf5-is-for-lovers.slides.html 
 sed -i &apos;/&lt;\!-- Social buttons --&gt;/,/&lt;\!-- End of social buttons --&gt;/d&apos; hdf5-is-for-lovers.slides.html 
-#sed -i &apos;s/background: #3F3F3F;/background: #4A363D;/&apos; reveal.js/lib/css/zenburn.css 
 
 </pre>
 </div>
