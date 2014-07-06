@@ -28,6 +28,6 @@ def make_log():
             mask = mask | ((year*sec_per_year <= secs) & ((year+1)*sec_per_year >= secs))
         arr[hero] = mask
 
-    f = tb.openFile('epoch_log.h5', 'w')
-    f.createTable('/', 'log', arr)
+    f = tb.open_file('epoch_log.h5', 'w')
+    f.create_table('/', 'log', arr)
     f.close()

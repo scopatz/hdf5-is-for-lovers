@@ -1,27 +1,31 @@
-"""Email today is just the worst.  It seems that 3/4 of time, the message is just 
-total junk while only 25% of emails are actually worthwhile.
 
-Somehow It is now your job to eliminate all of that spam for everyone at work, 
-leaving behind only the eggy goodness. You suspect compression might be able to
-aid you in your quest.
+# coding: utf-8
 
-1. Create an HDF5 file which contains a single emails array, uncompressed.  
-   Close this file and use the getsize() function to report the size on disk.
-   Time how long this took and print that out as well.
+# **Email today is just the worst.  It seems that 3/4 of time, the message is just 
+# total junk while only 25% of emails are actually worthwhile.**
+# 
+# Somehow It is now your job to eliminate all of that spam for everyone at work, 
+# leaving behind only the eggy goodness. You suspect compression might be able to
+# aid you in your quest.
+# 
+# 1. Create an HDF5 file which contains a single emails array, uncompressed.  
+#    Close this file and use the getsize() function to report the size on disk.
+#    Time how long this took and print that out as well.
+# 
+# 2. Repeat step 1 but with zlib compression at level 1.
+# 
+# 3. Repeat step 1 but with blosc compression at level 5.
+# 
+# 4. You realize that spam is often vacuous.  What if the unwanted elements
+#    weren't already tagged.  Repeat step 1, leaving the data uncompressed
+#    but without filling in spam everywhere.
+# 
+# 5. Repeat step 4 but with blosc compression at level 5.
+# 
+# 6. How long does it take to read these arrays in?
 
-2. Repeat step 1 but with zlib compression at level 1.
+# In[ ]:
 
-3. Repeat step 1 but with blosc compression at level 5.
-
-4. You realize that spam is often vacuous.  What if the unwanted elements
-   weren't already tagged.  Repeat step 1, leaving the data uncompressed
-   but without filling in spam everywhere.
-
-5. Repeat step 4 but with blosc compression at level 5.
-
-6. How long does it take to read these arrays in?
-
-"""
 from time import time
 from os.path import getsize
 
@@ -39,29 +43,47 @@ def email_array(num=10000000, rate=0.75, fill=True):
     return emails
 
 
-# 1. Create an HDF5 file which contains a single emails array, uncompressed.  
-#    Close this file and use the getsize() function to report the size on disk.
-#    Time how long this took and print that out as well.
+# **1. Create an HDF5 file which contains a single emails array, uncompressed. Close this file and use the getsize() function to report the size on disk.
+# Time how long this took and print that out as well.**
 
-
-
-# 2. Repeat step 1 but with zlib compression at level 1.
+# In[ ]:
 
 
 
 
-# 3. Repeat step 1 but with blosc compression at level 5.
+# **2. Repeat step 1 but with zlib compression at level 1.**
 
-    
-
-# 4. You realize that spam is often vacuous.  What if the unwanted elements
-#    weren't already tagged.  Repeat step 1, leaving the data uncompressed
-#    but without filling in spam everywhere.
-
-
-# 5. Repeat step 4 but with blosc compression at level 5.
+# In[ ]:
 
 
 
-# 6. How long does it take to read this data in?
+
+# **3. Repeat step 1 but with blosc compression at level 5.**
+
+# In[ ]:
+
+
+
+
+# **4. You realize that spam is often vacuous.  What if the unwanted elements
+# weren't already tagged.  Repeat step 1, leaving the data uncompressed
+# but without filling in spam everywhere.**
+
+# In[ ]:
+
+
+
+
+# **5. Repeat step 4 but with blosc compression at level 5.**
+
+# In[ ]:
+
+
+
+
+# **6. How long does it take to read this data in?**
+
+# In[ ]:
+
+
 
